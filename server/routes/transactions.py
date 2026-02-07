@@ -1,14 +1,20 @@
-from fastapi import APIRouter
-import os
-from pathlib import Path
-import json
+from fastapi import APIRouter, Depends, Query
+
+from database import get_db
+from transaction_repo import get_transactions_for_user
+from google.cloud.firestore import Client as FirestoreClient
 
 router = APIRouter()
 
-file_path = Path(__file__).parent.parent / "data" / "user_persona_1_transactions.json"
 
 @router.get("/transactions")
-def get_transactions():
-    with open(file_path, "r") as f:
-        transactions = json.load(f)
-    return transactions["transactions"][:5]
+def get_transactions(
+    user_email: str = Query(..., description="User email to fetch transactions for"),
+    db: FirestoreClient = Depends(get_db),
+    limit: int | None = Query(None, description="Max number of transactions to return"),
+):
+    """Return transactions from Firestore for the given user email. No auth header required."""
+    transactions = get_transactions_for_user(db, user_email)
+    if limit is not None:
+        transactions = transactions[:limit]
+    return {"transactions": transactions}

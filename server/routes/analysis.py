@@ -1,22 +1,29 @@
-from fastapi import APIRouter
-import json
-from pathlib import Path
 from collections import defaultdict
+
+from fastapi import APIRouter, Depends, Query
+
+from database import get_db
+from transaction_repo import get_transactions_for_user
+from google.cloud.firestore import Client as FirestoreClient
 
 router = APIRouter()
 
-file_path = Path(__file__).parent.parent / "data" / "user_persona_1_transactions.json"
-
-with open(file_path, "r") as f:
-    transactions = json.load(f)
 
 @router.get("/analysis")
-def get_analysis():
+def get_analysis(
+    user_email: str = Query(..., description="User email to fetch analysis for"),
+    db: FirestoreClient = Depends(get_db),
+):
+    """Return debit/credit by category for the given user's transactions. No auth header required."""
+    transactions = get_transactions_for_user(db, user_email)
     debit = defaultdict(float)
     credit = defaultdict(float)
-    for transaction in transactions["transactions"]:
-        if transaction["amount"] < 0:
-            debit[transaction["category"]] += round(-1 * transaction["amount"], 2)
-        else:
-            credit[transaction["category"]] += round(transaction["amount"], 2)
-    return {"debit": debit, "credit": credit}
+    for t in transactions:
+        amount = t.get("amount", 0)
+        category = t.get("category", "Other")
+        if isinstance(amount, (int, float)):
+            if amount < 0:
+                debit[category] += round(-1 * amount, 2)
+            else:
+                credit[category] += round(amount, 2)
+    return {"debit": dict(debit), "credit": dict(credit)}
