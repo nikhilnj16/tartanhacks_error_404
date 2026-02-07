@@ -6,6 +6,7 @@ import SubscriptionManagerTab from "./SubscriptionManagerTab";
 import CarbonEmissionsTab from "./CarbonEmissionsTab";
 import UserSettingsTab from "./UserSettingsTab";
 import { getBudget, getBudgetPlan, getStoredUserEmail } from "../api/budget";
+import logo from "../assets/logo.png";
 
 import {
     PieChart,
@@ -174,9 +175,13 @@ export default function Dashboard() {
                         >
                             ☰
                         </button>
-                        <h1 className="absolute left-1/2 -translate-x-1/2 font-bold text-lg text-[#19747E]">
-                            BudgetBruh
-                        </h1>
+
+                        {/* Center: Title */}
+                        <img
+                            src={logo}
+                            alt="BudgetBruh"
+                            className="absolute left-1/2 -translate-x-1/2 h-8 md:hidden"
+                        />
                     </div>
                 </header>
 

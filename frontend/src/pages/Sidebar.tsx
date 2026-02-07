@@ -1,3 +1,5 @@
+import logo from "../assets/logo.png";
+
 type Tab =
     | "spending"
     | "predictive"
@@ -41,7 +43,7 @@ export default function Sidebar({
             >
                 {/* Header */}
                 <div className="h-14 flex items-center justify-between px-4 border-b border-[#E2E2E2]">
-                    {/* <span className="font-bold text-lg">BudgetBruh</span> */}
+                    <img src={logo} alt="BudgetBruh" className="h-10 hidden md:block" />
                     <button onClick={onClose} className="md:hidden text-xl text-[#19747E]">
                         ✕
                     </button>
