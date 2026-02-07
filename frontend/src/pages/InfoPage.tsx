@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import logo from "../assets/logo.png";
@@ -7,6 +8,12 @@ import { MotivationEngine } from "./MotivationEngine";
 import { CTA } from "./CTA";
 
 export default function InfoPage() {
+    const [animate, setAnimate] = useState(false);
+
+    useEffect(() => {
+        setAnimate(true);
+    }, []);
+
     return (
         <div className="w-full">
             <div className="relative overflow-hidden bg-gradient-to-br from-[#D1E8E2] via-[#E2E2E2] to-[#A9D6E5] min-h-screen">
@@ -38,7 +45,12 @@ export default function InfoPage() {
                     <div className="text-center">
                         {/* Logo/Brand */}
                         <div className="mb-8 inline-flex items-center justify-center">
-                            <img src={logo} alt="BudgetBruh" className="h-32 w-auto" />
+                            <img
+                                src={logo}
+                                alt="BudgetBruh"
+                                className={`h-32 w-auto transition-all duration-1000 ease-out transform ${animate ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-95"
+                                    }`}
+                            />
                         </div>
 
                         {/* Main Headline */}
