@@ -52,15 +52,18 @@ def generate_budget(
         if isinstance(amount, (int, float)):
             if amount < 0:
                 expenses += amount
+
                 cat = t.get("category") or "Other"
                 categories[cat] += amount
             else:
                 income += amount
-    savings = income + expenses  # expenses are negative
+    savings = income 
+    print(income, expenses, savings)
     categories = {k: round(v, 2) for k, v in categories.items()}
     income = round(income, 2)
     expenses = round(expenses, 2)
     savings = round(savings, 2)
+ 
 
     budget = {
         "income": income,

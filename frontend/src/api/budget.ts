@@ -66,7 +66,8 @@ export async function getBudgetPlan(userEmail: string): Promise<BudgetPlanWithSa
   };
 }
 
-export type UpdateBudgetPayload = BudgetPlanResponse & {
+export type UpdateBudgetPayload = {
+  [key: string]: number | string | undefined;
   savings_goal?: string;
   savings_reason?: string;
 };

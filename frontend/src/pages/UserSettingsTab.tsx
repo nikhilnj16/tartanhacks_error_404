@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function UserSettingsTab() {
-    const [name, setName] = useState("Alex Johnson");
-    const [email, setEmail] = useState("alex@budgetbruh.com");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+
+    useEffect(() => {
+        const raw = localStorage.getItem("auth_user");
+        if (raw) {
+            try {
+                const user = JSON.parse(raw);
+                setName(user.name || user.full_name || "User");
+                setEmail(user.email || "");
+            } catch { }
+        }
+    }, []);
 
     const [notifications, setNotifications] = useState({
         budgetAlerts: true,
