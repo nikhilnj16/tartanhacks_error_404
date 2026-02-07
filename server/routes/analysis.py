@@ -1,22 +1,43 @@
-from fastapi import APIRouter
-import json
-from pathlib import Path
 from collections import defaultdict
+from firebase_admin import firestore
+from database import init_db
+from dotenv import load_dotenv
+
+load_dotenv()
+
+init_db()
+
+from fastapi import APIRouter, Depends, Query
+
+from database import get_db
+from transaction_repo import get_transactions_for_user
+from google.cloud.firestore import Client as FirestoreClient
 
 router = APIRouter()
 
-file_path = Path(__file__).parent.parent / "data" / "user_persona_1_transactions.json"
+def return_email():
+    db = firestore.client()
+    users = db.collection("users").get()
+    email = ""
+    for user in users:
+        email = user.to_dict()['email']
+        break
+    return email
 
-with open(file_path, "r") as f:
-    transactions = json.load(f)
 
 @router.get("/analysis")
 def get_analysis():
+    db = firestore.client()
+    transactions = db.collection("transactions").document(return_email()).get()
+    transactions = transactions.to_dict()["transactions"]
     debit = defaultdict(float)
     credit = defaultdict(float)
-    for transaction in transactions["transactions"]:
+    subscriptions = defaultdict(float)
+    for transaction in transactions:
         if transaction["amount"] < 0:
             debit[transaction["category"]] += round(-1 * transaction["amount"], 2)
+            if transaction["category"] == "Subscriptions":
+                subscriptions[transaction["place"]] += round(-1 * transaction["amount"], 2)
         else:
             credit[transaction["category"]] += round(transaction["amount"], 2)
-    return {"debit": debit, "credit": credit}
+    return {"debit": debit, "credit": credit, "subscriptions": subscriptions}

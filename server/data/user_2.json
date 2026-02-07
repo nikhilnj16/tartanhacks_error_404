@@ -1,0 +1,771 @@
+{
+    "transactions": [
+        {
+            "date": "2024-12-07",
+            "time": "15:03:15",
+            "transaction_id": "TXN002",
+            "amount": -35.0,
+            "place": "Amazon - Textbook (Used)",
+            "category": "Shopping"
+        },
+        {
+            "date": "2024-12-07",
+            "time": "17:03:56",
+            "transaction_id": "TXN001",
+            "amount": -2.5,
+            "place": "City Bus - Single Ride",
+            "category": "Transport"
+        },
+        {
+            "date": "2024-12-08",
+            "time": "10:05:47",
+            "transaction_id": "TXN004",
+            "amount": -1.5,
+            "place": "Campus Store - Folder",
+            "category": "Personal"
+        },
+        {
+            "date": "2024-12-08",
+            "time": "13:08:00",
+            "transaction_id": "TXN003",
+            "amount": -42.01,
+            "place": "Walmart - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-09",
+            "time": "17:34:57",
+            "transaction_id": "TXN005",
+            "amount": -1.5,
+            "place": "Campus Store - Folder",
+            "category": "Personal"
+        },
+        {
+            "date": "2024-12-10",
+            "time": "14:10:08",
+            "transaction_id": "TXN006",
+            "amount": -1.5,
+            "place": "Vending Machine - Campus",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-11",
+            "time": "16:30:08",
+            "transaction_id": "TXN007",
+            "amount": -2.0,
+            "place": "Campus Store - Snack",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-12",
+            "time": "14:54:41",
+            "transaction_id": "TXN008",
+            "amount": -3.0,
+            "place": "Campus Coffee Cart",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-13",
+            "time": "02:15:33",
+            "transaction_id": "TXN009",
+            "amount": 1600,
+            "place": "Tech Company - Internship Pay",
+            "category": "Income & Transfers"
+        },
+        {
+            "date": "2024-12-14",
+            "time": "16:34:15",
+            "transaction_id": "TXN010",
+            "amount": -2.5,
+            "place": "City Bus - Single Ride",
+            "category": "Transport"
+        },
+        {
+            "date": "2024-12-15",
+            "time": "10:29:58",
+            "transaction_id": "TXN011",
+            "amount": -34.57,
+            "place": "Aldi - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-15",
+            "time": "14:17:28",
+            "transaction_id": "TXN012",
+            "amount": -2.5,
+            "place": "City Bus - Single Ride",
+            "category": "Transport"
+        },
+        {
+            "date": "2024-12-17",
+            "time": "12:19:37",
+            "transaction_id": "TXN013",
+            "amount": -3.32,
+            "place": "Dollar Menu - McDonalds",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-18",
+            "time": "14:49:34",
+            "transaction_id": "TXN014",
+            "amount": -3.5,
+            "place": "Campus Store - Snack",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-19",
+            "time": "16:07:16",
+            "transaction_id": "TXN015",
+            "amount": -1.5,
+            "place": "Water Bottle - Dispenser",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-20",
+            "time": "11:04:56",
+            "transaction_id": "TXN018",
+            "amount": -4.99,
+            "place": "CVS - Band-aids",
+            "category": "Personal"
+        },
+        {
+            "date": "2024-12-20",
+            "time": "13:24:45",
+            "transaction_id": "TXN017",
+            "amount": -5.36,
+            "place": "Dollar Menu - McDonalds",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-20",
+            "time": "16:42:25",
+            "transaction_id": "TXN016",
+            "amount": -1.5,
+            "place": "Water Bottle - Dispenser",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-21",
+            "time": "17:11:39",
+            "transaction_id": "TXN019",
+            "amount": -35.0,
+            "place": "Amazon - Textbook (Used)",
+            "category": "Shopping"
+        },
+        {
+            "date": "2024-12-22",
+            "time": "11:24:20",
+            "transaction_id": "TXN020",
+            "amount": -29.4,
+            "place": "Aldi - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-23",
+            "time": "16:06:34",
+            "transaction_id": "TXN021",
+            "amount": -1.5,
+            "place": "Vending Machine - Campus",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-24",
+            "time": "13:37:16",
+            "transaction_id": "TXN023",
+            "amount": -3.59,
+            "place": "Dollar Menu - McDonalds",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-24",
+            "time": "14:52:25",
+            "transaction_id": "TXN022",
+            "amount": -2.0,
+            "place": "Vending Machine - Campus",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-26",
+            "time": "16:03:18",
+            "transaction_id": "TXN024",
+            "amount": -2.5,
+            "place": "Vending Machine - Campus",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-27",
+            "time": "02:15:33",
+            "transaction_id": "TXN025",
+            "amount": 1600,
+            "place": "Tech Company - Internship Pay",
+            "category": "Income & Transfers"
+        },
+        {
+            "date": "2024-12-28",
+            "time": "19:45:31",
+            "transaction_id": "TXN026",
+            "amount": -4.0,
+            "place": "Student Game Night - Snacks",
+            "category": "Entertainment"
+        },
+        {
+            "date": "2024-12-29",
+            "time": "13:17:37",
+            "transaction_id": "TXN027",
+            "amount": -34.58,
+            "place": "Walmart - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-29",
+            "time": "16:38:45",
+            "transaction_id": "TXN028",
+            "amount": -2.5,
+            "place": "City Bus - Single Ride",
+            "category": "Transport"
+        },
+        {
+            "date": "2024-12-30",
+            "time": "14:58:31",
+            "transaction_id": "TXN029",
+            "amount": -1.5,
+            "place": "Water Bottle - Dispenser",
+            "category": "Food"
+        },
+        {
+            "date": "2024-12-31",
+            "time": "12:59:15",
+            "transaction_id": "TXN030",
+            "amount": -6.41,
+            "place": "Campus Cafeteria - Lunch Special",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-01",
+            "time": "08:07:11",
+            "transaction_id": "TXN034",
+            "amount": -85,
+            "place": "Student Health Insurance",
+            "category": "Health"
+        },
+        {
+            "date": "2025-01-01",
+            "time": "08:14:30",
+            "transaction_id": "TXN031",
+            "amount": -650,
+            "place": "University Housing - Dorm",
+            "category": "Housing & Bills"
+        },
+        {
+            "date": "2025-01-01",
+            "time": "08:23:54",
+            "transaction_id": "TXN033",
+            "amount": -25,
+            "place": "Student Internet Plan",
+            "category": "Housing & Bills"
+        },
+        {
+            "date": "2025-01-01",
+            "time": "08:26:22",
+            "transaction_id": "TXN032",
+            "amount": -35,
+            "place": "Electric & Water Bundle",
+            "category": "Housing & Bills"
+        },
+        {
+            "date": "2025-01-01",
+            "time": "15:53:06",
+            "transaction_id": "TXN035",
+            "amount": -2.0,
+            "place": "Vending Machine - Campus",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-02",
+            "time": "16:49:19",
+            "transaction_id": "TXN036",
+            "amount": -3.0,
+            "place": "Campus Coffee Cart",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-03",
+            "time": "13:46:10",
+            "transaction_id": "TXN037",
+            "amount": -5.54,
+            "place": "Subway - 6 inch Sub",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-04",
+            "time": "18:43:17",
+            "transaction_id": "TXN038",
+            "amount": -2.5,
+            "place": "City Bus - Single Ride",
+            "category": "Transport"
+        },
+        {
+            "date": "2025-01-05",
+            "time": "09:23:52",
+            "transaction_id": "TXN039",
+            "amount": -5.99,
+            "place": "Spotify Student Plan",
+            "category": "Subscriptions"
+        },
+        {
+            "date": "2025-01-05",
+            "time": "13:51:35",
+            "transaction_id": "TXN040",
+            "amount": -27.13,
+            "place": "Aldi - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-05",
+            "time": "21:30:49",
+            "transaction_id": "TXN041",
+            "amount": -6.5,
+            "place": "Pizza Split with Roommates",
+            "category": "Entertainment"
+        },
+        {
+            "date": "2025-01-06",
+            "time": "12:04:26",
+            "transaction_id": "TXN043",
+            "amount": -6.82,
+            "place": "Food Truck - Burrito",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-06",
+            "time": "16:07:22",
+            "transaction_id": "TXN042",
+            "amount": -1.5,
+            "place": "Water Bottle - Dispenser",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-07",
+            "time": "12:01:35",
+            "transaction_id": "TXN044",
+            "amount": -3.11,
+            "place": "Dollar Menu - Fast Food",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-07",
+            "time": "12:43:52",
+            "transaction_id": "TXN046",
+            "amount": -5.26,
+            "place": "Campus Cafeteria - Lunch Special",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-07",
+            "time": "16:53:06",
+            "transaction_id": "TXN045",
+            "amount": -1.5,
+            "place": "Water Bottle - Dispenser",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-09",
+            "time": "13:25:46",
+            "transaction_id": "TXN048",
+            "amount": -3.05,
+            "place": "Dollar Menu - McDonalds",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-09",
+            "time": "16:39:32",
+            "transaction_id": "TXN047",
+            "amount": -2.0,
+            "place": "Vending Machine - Campus",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-10",
+            "time": "02:15:33",
+            "transaction_id": "TXN049",
+            "amount": 1600,
+            "place": "Tech Company - Internship Pay",
+            "category": "Income & Transfers"
+        },
+        {
+            "date": "2025-01-10",
+            "time": "10:27:35",
+            "transaction_id": "TXN051",
+            "amount": -2.0,
+            "place": "Dollar Store - Pens",
+            "category": "Personal"
+        },
+        {
+            "date": "2025-01-10",
+            "time": "16:43:43",
+            "transaction_id": "TXN050",
+            "amount": -3.0,
+            "place": "Campus Coffee Cart",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-11",
+            "time": "10:36:06",
+            "transaction_id": "TXN053",
+            "amount": -4.99,
+            "place": "CVS - Band-aids",
+            "category": "Personal"
+        },
+        {
+            "date": "2025-01-11",
+            "time": "17:44:10",
+            "transaction_id": "TXN052",
+            "amount": -2.5,
+            "place": "City Bus - Single Ride",
+            "category": "Transport"
+        },
+        {
+            "date": "2025-01-12",
+            "time": "11:21:38",
+            "transaction_id": "TXN054",
+            "amount": -32.15,
+            "place": "Aldi - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-13",
+            "time": "13:36:51",
+            "transaction_id": "TXN056",
+            "amount": -5.82,
+            "place": "Dollar Menu - McDonalds",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-13",
+            "time": "15:16:39",
+            "transaction_id": "TXN055",
+            "amount": -1.5,
+            "place": "Water Bottle - Dispenser",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-14",
+            "time": "12:06:12",
+            "transaction_id": "TXN058",
+            "amount": -5.94,
+            "place": "Campus Cafeteria - Lunch Special",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-14",
+            "time": "13:15:04",
+            "transaction_id": "TXN057",
+            "amount": -7.1,
+            "place": "Campus Cafeteria",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-15",
+            "time": "14:58:45",
+            "transaction_id": "TXN059",
+            "amount": -2.5,
+            "place": "Vending Machine - Campus",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-15",
+            "time": "16:38:02",
+            "transaction_id": "TXN061",
+            "amount": -1.5,
+            "place": "Campus Library - Printing",
+            "category": "Personal"
+        },
+        {
+            "date": "2025-01-15",
+            "time": "16:57:03",
+            "transaction_id": "TXN060",
+            "amount": -2.5,
+            "place": "City Bus - Single Ride",
+            "category": "Transport"
+        },
+        {
+            "date": "2025-01-16",
+            "time": "16:19:33",
+            "transaction_id": "TXN062",
+            "amount": -3.0,
+            "place": "Campus Coffee Cart",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-17",
+            "time": "15:36:19",
+            "transaction_id": "TXN063",
+            "amount": -2.0,
+            "place": "Campus Store - Snack",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-19",
+            "time": "11:52:45",
+            "transaction_id": "TXN064",
+            "amount": -44.15,
+            "place": "Walmart - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-19",
+            "time": "20:16:02",
+            "transaction_id": "TXN065",
+            "amount": -8.0,
+            "place": "Campus Bowling Night",
+            "category": "Entertainment"
+        },
+        {
+            "date": "2025-01-20",
+            "time": "13:42:56",
+            "transaction_id": "TXN066",
+            "amount": -7.3,
+            "place": "Campus Cafeteria - Lunch Special",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-21",
+            "time": "13:01:41",
+            "transaction_id": "TXN067",
+            "amount": -6.53,
+            "place": "Food Truck - Burrito",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-22",
+            "time": "16:53:41",
+            "transaction_id": "TXN068",
+            "amount": -3.5,
+            "place": "Campus Library - Printing",
+            "category": "Personal"
+        },
+        {
+            "date": "2025-01-24",
+            "time": "02:15:33",
+            "transaction_id": "TXN069",
+            "amount": 1600,
+            "place": "Tech Company - Internship Pay",
+            "category": "Income & Transfers"
+        },
+        {
+            "date": "2025-01-24",
+            "time": "12:11:57",
+            "transaction_id": "TXN071",
+            "amount": -4.59,
+            "place": "Dollar Menu - McDonalds",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-24",
+            "time": "15:53:27",
+            "transaction_id": "TXN070",
+            "amount": -2.5,
+            "place": "Campus Coffee Cart",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-26",
+            "time": "10:55:53",
+            "transaction_id": "TXN072",
+            "amount": -38.35,
+            "place": "Walmart - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-27",
+            "time": "13:38:44",
+            "transaction_id": "TXN074",
+            "amount": -4.86,
+            "place": "Dollar Menu - McDonalds",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-27",
+            "time": "14:51:00",
+            "transaction_id": "TXN073",
+            "amount": -1.5,
+            "place": "Water Bottle - Dispenser",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-28",
+            "time": "13:21:08",
+            "transaction_id": "TXN075",
+            "amount": -7.7,
+            "place": "Food Truck - Burrito",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-30",
+            "time": "13:34:59",
+            "transaction_id": "TXN076",
+            "amount": -7.85,
+            "place": "Campus Cafeteria",
+            "category": "Food"
+        },
+        {
+            "date": "2025-01-31",
+            "time": "11:45:50",
+            "transaction_id": "TXN078",
+            "amount": -4.99,
+            "place": "CVS - Band-aids",
+            "category": "Personal"
+        },
+        {
+            "date": "2025-01-31",
+            "time": "14:44:55",
+            "transaction_id": "TXN077",
+            "amount": -2.5,
+            "place": "Campus Coffee Cart",
+            "category": "Food"
+        },
+        {
+            "date": "2025-02-01",
+            "time": "08:08:51",
+            "transaction_id": "TXN079",
+            "amount": -650,
+            "place": "University Housing - Dorm",
+            "category": "Housing & Bills"
+        },
+        {
+            "date": "2025-02-01",
+            "time": "08:19:45",
+            "transaction_id": "TXN082",
+            "amount": -85,
+            "place": "Student Health Insurance",
+            "category": "Health"
+        },
+        {
+            "date": "2025-02-01",
+            "time": "08:20:25",
+            "transaction_id": "TXN080",
+            "amount": -35,
+            "place": "Electric & Water Bundle",
+            "category": "Housing & Bills"
+        },
+        {
+            "date": "2025-02-01",
+            "time": "08:23:01",
+            "transaction_id": "TXN081",
+            "amount": -25,
+            "place": "Student Internet Plan",
+            "category": "Housing & Bills"
+        },
+        {
+            "date": "2025-02-01",
+            "time": "11:48:36",
+            "transaction_id": "TXN084",
+            "amount": -18.0,
+            "place": "Great Clips - Haircut",
+            "category": "Personal"
+        },
+        {
+            "date": "2025-02-01",
+            "time": "15:38:59",
+            "transaction_id": "TXN083",
+            "amount": -8.5,
+            "place": "Dollar Store - Toiletries",
+            "category": "Personal"
+        },
+        {
+            "date": "2025-02-02",
+            "time": "10:19:55",
+            "transaction_id": "TXN085",
+            "amount": -30.63,
+            "place": "Aldi - Groceries",
+            "category": "Food"
+        },
+        {
+            "date": "2025-02-04",
+            "time": "13:18:05",
+            "transaction_id": "TXN087",
+            "amount": -7.17,
+            "place": "Campus Cafeteria - Lunch Special",
+            "category": "Food"
+        },
+        {
+            "date": "2025-02-04",
+            "time": "16:51:17",
+            "transaction_id": "TXN086",
+            "amount": -1.5,
+            "place": "Water Bottle - Dispenser",
+            "category": "Food"
+        },
+        {
+            "date": "2025-02-05",
+            "time": "09:02:15",
+            "transaction_id": "TXN088",
+            "amount": -5.99,
+            "place": "Spotify Student Plan",
+            "category": "Subscriptions"
+        },
+        {
+            "date": "2025-02-05",
+            "time": "16:20:39",
+            "transaction_id": "TXN089",
+            "amount": -3.0,
+            "place": "Campus Store - Snack",
+            "category": "Food"
+        },
+        {
+            "date": "2025-02-05",
+            "time": "17:00:25",
+            "transaction_id": "TXN090",
+            "amount": -1.5,
+            "place": "Campus Library - Printing",
+            "category": "Personal"
+        },
+        {
+            "date": "2025-02-06",
+            "time": "13:31:51",
+            "transaction_id": "TXN091",
+            "amount": -3.18,
+            "place": "Dollar Menu - Fast Food",
+            "category": "Food"
+        },
+        {
+            "date": "2025-02-06",
+            "time": "16:56:11",
+            "transaction_id": "TXN092",
+            "amount": -3.5,
+            "place": "Campus Store - Snack",
+            "category": "Food"
+        },
+        {
+            "date": "2025-02-07",
+            "time": "02:15:33",
+            "transaction_id": "TXN093",
+            "amount": 1600,
+            "place": "Tech Company - Internship Pay",
+            "category": "Income & Transfers"
+        },
+        {
+            "date": "2025-02-07",
+            "time": "13:26:45",
+            "transaction_id": "TXN094",
+            "amount": -6.2,
+            "place": "Subway - 6 inch Sub",
+            "category": "Food"
+        }
+    ],
+    "metadata": {
+        "persona": {
+            "housing": "College Dorm",
+            "income_source": "Tech Internship",
+            "monthly_income": 3200,
+            "spending_style": "Minimalist & Frugal",
+            "food_preference": "Cook at home, meal prep",
+            "entertainment": "Rare treats on weekends",
+            "transport": "Walk/bike, occasional bus",
+            "shopping": "Only essentials, thrift stores"
+        },
+        "period": "2024-12-07 to 2025-02-07",
+        "total_transactions": 94,
+        "generation_date": "2026-02-07 07:17:51"
+    }
+}

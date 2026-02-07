@@ -8,3 +8,4 @@ class Transaction(BaseModel):
     amount: float
     place: str
     category: str
+
