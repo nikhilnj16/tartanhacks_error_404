@@ -12,18 +12,12 @@ init_db()
 
 router = APIRouter()
 
-def return_email():
-    db = firestore.client()
-    print(db)
-    users = db.collection("users").get()
-    email = ""
-    for user in users:
-        email = user.to_dict()['email']
-        break
-    return email
+
 
 @router.get("/transactions")
-def get_transactions():
+def get_transactions(user_email: str):
     db = firestore.client()
-    transactions = db.collection("transactions").document(return_email()).get()
-    return transactions.to_dict()["transactions"][:5]
+    transactions = db.collection("transactions").document(user_email).get()
+    if not transactions.exists:
+        return []
+    return transactions.to_dict().get("transactions", [])
