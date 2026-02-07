@@ -3,6 +3,8 @@ from pydantic import BaseModel
 
 from routes.target import compute_goal_status
 
+
+
 user_profile = {
     "hourly_wage": 15.00
 }
@@ -50,3 +52,6 @@ def reflect_purchase(data: PurchaseInput):
             )
         }
     }
+
+
+    
