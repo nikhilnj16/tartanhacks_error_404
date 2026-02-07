@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { LogOut } from "lucide-react";
 import axios from "axios";
@@ -63,6 +63,14 @@ export default function Dashboard() {
     const [savings, setSavings] = useState<number>(0);
     const [savingsGoal, setSavingsGoal] = useState("");
     const [savingsReason, setSavingsReason] = useState("");
+
+    // Scroll to top ref
+    const mainContentRef = useRef<HTMLDivElement>(null);
+
+    // Scroll to top on tab change
+    useEffect(() => {
+        mainContentRef.current?.scrollTo({ top: 0, behavior: "instant" });
+    }, [activeTab]);
 
     useEffect(() => {
         const email = getStoredUserEmail();
@@ -154,7 +162,7 @@ export default function Dashboard() {
     }
 
     return (
-        <div className="h-screen w-full flex overflow-hidden bg-[#D1E8E2]">
+        <div className="fixed inset-0 w-full flex overflow-hidden bg-[#D1E8E2]">
             <MoneyRain savings={savings} />
             {/* Sidebar */}
             <Sidebar
@@ -201,7 +209,10 @@ export default function Dashboard() {
                 </header>
 
                 {/* Scrollable Content */}
-                <main className="flex-1 overflow-y-auto p-6 space-y-8">
+                <main
+                    ref={mainContentRef}
+                    className="flex-1 overflow-y-auto p-6 space-y-8"
+                >
                     {activeTab === "spending" && (
                         <SpendingTab
                             spendingData={spendingData}
