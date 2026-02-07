@@ -81,26 +81,26 @@ export default function Signup() {
     };
 
     return (
-        <div className="h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-200 px-4 sm:px-6">
-            <div className="w-full max-w-md sm:max-w-lg bg-white rounded-2xl shadow-xl p-6 sm:p-8">
-                <h1 className="text-2xl sm:text-3xl font-bold text-center text-slate-900">
+        <div className="h-screen w-full flex items-center justify-center px-4 sm:px-6 bg-gradient-to-br from-[#D1E8E2] via-[#E2E2E2] to-[#A9D6E5] overflow-hidden">
+            <div className="w-full max-w-md bg-[#F7FBFA] border border-[#E2E2E2] rounded-2xl shadow-xl p-5">
+                <h1 className="text-2xl font-bold text-center text-[#19747E] mb-1">
                     Create Account
                 </h1>
 
-                <p className="text-center text-slate-500 mt-2 mb-6 text-sm sm:text-base">
+                <p className="text-center text-slate-500 text-sm mb-4">
                     Start managing your finances smarter
                 </p>
 
                 {apiError && (
                     <div
                         role="alert"
-                        className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm"
+                        className="mb-3 p-2 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs"
                     >
                         {apiError}
                     </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3">
                     <Input label="Full Name" name="name" value={form.name} onChange={handleChange} />
                     <Input
                         label="Phone Number"
@@ -108,7 +108,7 @@ export default function Signup() {
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="e.g. 5551234567"
-                        hint="Enter 10 digits only (numbers, no spaces or symbols)."
+                        hint="10 digits only."
                         error={
                             form.phone.length > 0 && !phoneValid
                                 ? "Phone must be exactly 10 digits."
@@ -121,7 +121,7 @@ export default function Signup() {
                         type="email"
                         value={form.email}
                         onChange={handleChange}
-                        hint="We'll use this to sign you in. Use a valid email format (e.g. name@example.com)."
+                        hint="Use a valid email."
                         error={
                             form.email.length > 0 && !emailValid
                                 ? "Please enter a valid email address."
@@ -145,16 +145,16 @@ export default function Signup() {
                     <button
                         type="submit"
                         disabled={!formValid || loading}
-                        className={`w-full mt-4 py-3 rounded-xl font-semibold text-base sm:text-lg transition ${formValid && !loading
-                                ? "bg-indigo-600 text-white hover:bg-indigo-700"
-                                : "bg-slate-300 text-slate-500 cursor-not-allowed"
+                        className={`w-full mt-3 py-2.5 rounded-xl font-semibold text-base transition ${formValid && !loading
+                            ? "bg-[#19747E] text-white hover:bg-[#19747E]"
+                            : "bg-[#E2E2E2] text-slate-500 cursor-not-allowed"
                             }`}
                     >
                         {loading ? "Signing up…" : "Sign Up"}
                     </button>
                 </form>
 
-                <p className="mt-6 text-center text-sm text-slate-600">
+                <p className="mt-3 text-center text-xs text-slate-600">
                     Already have an account?{" "}
                     <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-700">
                         Log in
@@ -190,7 +190,7 @@ function Input({
 }: InputProps) {
     return (
         <div>
-            <label className="block text-xs sm:text-sm font-medium text-slate-700 mb-1">
+            <label className="block text-xs font-medium text-[#19747E] mb-0.5">
                 {label}
             </label>
             <input
@@ -200,13 +200,13 @@ function Input({
                 onChange={onChange}
                 required
                 placeholder={placeholder}
-                className={`w-full rounded-lg px-3 sm:px-4 py-2 text-sm sm:text-base border focus:outline-none focus:ring-2 ${error
-                        ? "border-red-400 focus:ring-red-400"
-                        : "border-slate-300 focus:ring-indigo-500"
+                className={`w-full rounded-lg px-3 py-1.5 text-sm border focus:outline-none focus:ring-2 ${error
+                    ? "border-red-400 focus:ring-red-400"
+                    : "border-[#E2E2E2] focus:ring-[#A9D6E5]"
                     }`}
             />
-            {hint && !error && <p className="mt-1 text-xs text-slate-500">{hint}</p>}
-            {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
+            {hint && !error && <p className="mt-0.5 text-[10px] text-slate-500">{hint}</p>}
+            {error && <p className="mt-0.5 text-[10px] text-red-500">{error}</p>}
         </div>
     );
 }
