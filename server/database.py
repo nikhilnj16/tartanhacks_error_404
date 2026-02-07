@@ -1,6 +1,6 @@
 """
 Database configuration for the smart budgeting app.
-Uses Firebase Firestore. Configure via service account JSON.
+Uses Firebase Firestore. Credentials via FIREBASE_SERVICE_ACCOUNT_JSON only (no files in repo).
 """
 import json
 import os
@@ -10,37 +10,28 @@ from dotenv import load_dotenv
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-load_dotenv()
+# Load .env from server dir and project root so it's found regardless of cwd
+_server_dir = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(_server_dir, ".env"))
+load_dotenv()  # also cwd (e.g. project root)
 
 # Firestore client (set after init)
 _firestore_client: firestore.Client | None = None
 
 
 def _get_credential():
-    """Build Firebase credential from env: file path or JSON string. Falls back to same-dir JSON."""
-    # Option 1: Path to service account JSON file (strip whitespace – no space after = in .env)
-    path = (os.getenv("GOOGLE_APPLICATION_CREDENTIALS") or "").strip()
-    if path and os.path.isfile(path):
-        return credentials.Certificate(path)
-    # Option 2: JSON string (e.g. in production / serverless)
+    """Build Firebase credential from FIREBASE_SERVICE_ACCOUNT_JSON env (JSON string). No credential files in repo."""
     json_str = (os.getenv("FIREBASE_SERVICE_ACCOUNT_JSON") or "").strip()
-    if json_str:
-        try:
-            info = json.loads(json_str)
-            return credentials.Certificate(info)
-        except json.JSONDecodeError:
-            raise ValueError("FIREBASE_SERVICE_ACCOUNT_JSON is invalid JSON")
-    # Option 3: Look for service account JSON in same directory as this file
-    _dir = os.path.dirname(os.path.abspath(__file__))
-    for name in os.listdir(_dir):
-        if "adminsdk" in name.lower() and name.endswith(".json"):
-            candidate = os.path.join(_dir, name)
-            if os.path.isfile(candidate):
-                return credentials.Certificate(candidate)
-    raise ValueError(
-        "Firebase credentials not found. Set GOOGLE_APPLICATION_CREDENTIALS (path to JSON) "
-        "or FIREBASE_SERVICE_ACCOUNT_JSON (JSON string), or place a *adminsdk*.json file in the server folder."
-    )
+    if not json_str:
+        raise ValueError(
+            "Firebase credentials not set. In .env set FIREBASE_SERVICE_ACCOUNT_JSON to the full "
+            "service account JSON as a single line. Never commit .env or the JSON."
+        )
+    try:
+        info = json.loads(json_str)
+        return credentials.Certificate(info)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"FIREBASE_SERVICE_ACCOUNT_JSON is invalid JSON: {e}") from e
 
 
 def init_db() -> None:
