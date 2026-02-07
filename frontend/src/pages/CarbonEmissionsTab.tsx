@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import { getStoredUserEmail } from "../api/budget";
 import { getCarbonFootprint, type CarbonFootprintResponse } from "../api/carbon";
+import Loader from "../components/Loader";
 
 const CATEGORY_COLORS = ["#059669", "#0d9488", "#0f766e", "#115e59", "#134e4a", "#14b8a6", "#2dd4bf", "#5eead4"];
 const IMPACT_COLORS = { Low: "#22c55e", Medium: "#eab308", High: "#ef4444" };
@@ -52,9 +53,7 @@ export default function CarbonEmissionsTab() {
         return (
             <div className="space-y-8">
                 <h2 className="text-2xl font-bold">Carbon Emissions</h2>
-                <div className="flex items-center justify-center py-12 text-slate-500">
-                    Loading…
-                </div>
+                <Loader className="py-12" />
             </div>
         );
     }
@@ -159,7 +158,7 @@ export default function CarbonEmissionsTab() {
                                         <Cell key={`cell-${index}`} fill={entry.color} />
                                     ))}
                                 </Pie>
-                                <Tooltip formatter={(value: number) => [`${value} kg CO₂e`, "Emissions"]} />
+                                <Tooltip formatter={(value: any) => [`${value} kg CO₂e`, "Emissions"]} />
                                 <Legend />
                             </PieChart>
                         </ResponsiveContainer>
@@ -188,7 +187,7 @@ export default function CarbonEmissionsTab() {
                         <BarChart data={impactLevelChart} margin={{ top: 20, right: 20, left: 20, bottom: 20 }}>
                             <XAxis dataKey="name" />
                             <YAxis allowDecimals={false} />
-                            <Tooltip formatter={(value: number) => [value, "Transactions"]} />
+                            <Tooltip formatter={(value: any) => [value, "Transactions"]} />
                             <Bar dataKey="count" name="Transactions" radius={[6, 6, 0, 0]}>
                                 {impactLevelChart.map((entry, index) => (
                                     <Cell key={`impact-${index}`} fill={entry.fill} />

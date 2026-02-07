@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import logo from "../assets/logo.png";
 import { Philosophy } from "./Philosophy";
 import { ReflectionEngine } from "./ReflectionEngine";
@@ -37,11 +37,8 @@ export default function InfoPage() {
                 <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
                     <div className="text-center">
                         {/* Logo/Brand */}
-                        <div className="mb-8 inline-flex items-center gap-2">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/40 backdrop-blur-sm shadow-sm">
-                                <Sparkles className="h-7 w-7 text-[#19747E]" />
-                            </div>
-                            <img src={logo} alt="BudgetBruh" className="h-10 w-auto" />
+                        <div className="mb-8 inline-flex items-center justify-center">
+                            <img src={logo} alt="BudgetBruh" className="h-32 w-auto" />
                         </div>
 
                         {/* Main Headline */}
