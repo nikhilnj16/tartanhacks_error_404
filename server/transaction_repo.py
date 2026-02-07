@@ -24,3 +24,24 @@ def get_transactions_for_user(db: FirestoreClient, user_email: str) -> list[dict
     if not isinstance(transactions, list):
         return []
     return list(transactions)
+
+
+def add_transaction_for_user(
+    db: FirestoreClient, user_email: str, transaction: dict[str, Any]
+) -> int:
+    """
+    Append one transaction to the user's transactions array in Firestore.
+    Document ID = user email (lowercase); field "transactions" = array.
+    Returns the new length of the transactions array.
+    """
+    key = user_email.strip().lower()
+    ref = db.collection(TRANSACTIONS_COLLECTION).document(key)
+    doc = ref.get()
+    if doc.exists:
+        data = doc.to_dict() or {}
+        current = list(data.get("transactions") or [])
+    else:
+        current = []
+    current.append(transaction)
+    ref.set({"transactions": current})
+    return len(current)
