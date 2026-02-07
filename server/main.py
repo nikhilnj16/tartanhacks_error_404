@@ -4,11 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_db
-<<<<<<< HEAD
-from routes import transactions, analysis, auth, carbon
-=======
-from routes import transactions, analysis, auth, target, reflection, budget_planner
->>>>>>> e9ea1f46ea54f721af674a91dc924df5977ee66d
+from routes import transactions, analysis, auth, target, reflection, budget_planner, carbon
 
 
 @asynccontextmanager
