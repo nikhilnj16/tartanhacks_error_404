@@ -37,16 +37,29 @@ def get_emission_factors():
     }
 
 
+def _parse_date(s: str) -> str | None:
+    """Return YYYY-MM-DD string if valid, else None."""
+    if not s or not isinstance(s, str):
+        return None
+    s = s.strip()[:10]
+    if len(s) == 10 and s[4] == "-" and s[7] == "-":
+        return s
+    return None
+
+
 @router.get("/footprint")
 def get_carbon_footprint(
     user_email: str = Query(..., description="User email (e.g. current user) to compute footprint for"),
     db: FirestoreClient = Depends(get_db),
     limit: int | None = Query(None, description="Use only first N transactions (default: all)"),
     include_transactions: bool = Query(False, description="Include per-transaction impact classification"),
+    start_date: str | None = Query(None, description="Filter transactions on or after this date (YYYY-MM-DD)"),
+    end_date: str | None = Query(None, description="Filter transactions on or before this date (YYYY-MM-DD)"),
 ):
     """
     Compute carbon footprint (kg CO2e) from the given user's transactions (Firestore).
     Pass user email in query; no auth header required. Only spending (negative amounts) is counted.
+    Optionally filter by start_date and end_date (YYYY-MM-DD).
 
     **Impact classification** (vs baseline = average $ per transaction in that category):
     - **Low**: transaction amount < 70% of category average
@@ -54,6 +67,23 @@ def get_carbon_footprint(
     - **High**: transaction amount > 130% of category average
     """
     transactions = get_transactions_for_user(db, user_email)
+
+    start = _parse_date(start_date) if start_date else None
+    end = _parse_date(end_date) if end_date else None
+    if start or end:
+        filtered = []
+        for t in transactions:
+            td = t.get("date") or t.get("transaction_date") or ""
+            td_str = td[:10] if isinstance(td, str) else (str(td)[:10] if td else "")
+            if not td_str or len(td_str) != 10:
+                continue
+            if start and td_str < start:
+                continue
+            if end and td_str > end:
+                continue
+            filtered.append(t)
+        transactions = filtered
+
     if limit is not None:
         transactions = transactions[:limit]
     spending = [t for t in transactions if (t.get("amount") or 0) < 0]
