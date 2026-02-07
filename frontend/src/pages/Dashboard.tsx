@@ -26,7 +26,7 @@ type Tab =
     | "predictive"
     | "budget"
     | "subscriptions"
-    | "settings";
+    | "carbon";
 
 /* -------------------- Data -------------------- */
 
