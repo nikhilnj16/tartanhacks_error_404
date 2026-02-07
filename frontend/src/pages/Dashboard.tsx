@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import BudgetManagerTab from "./BudgetManagerTab";
 import SubscriptionManagerTab from "./SubscriptionManagerTab";
 import UserSettingsTab from "./UserSettingsTab";
+import MoneyRain from "../components/MoneyRain";
 import { getBudget, getBudgetPlan, getStoredUserEmail } from "../api/budget";
 import logo from "../assets/logo.png";
 
@@ -150,8 +151,20 @@ export default function Dashboard() {
             });
     }, []);
 
+    // ---------------------------------------------------------
+    // EFFECT 3: Fetch Savings for Money Rain
+    // ---------------------------------------------------------
+    const [savings, setSavings] = useState<number>(0);
+    useEffect(() => {
+        const email = getStoredUserEmail();
+        if (email) {
+            getBudget(email).then(b => setSavings(b.savings)).catch(() => { });
+        }
+    }, []);
+
     return (
         <div className="h-screen w-full flex overflow-hidden bg-[#D1E8E2]">
+            <MoneyRain savings={savings} />
             {/* Sidebar */}
             <Sidebar
                 isOpen={sidebarOpen}
