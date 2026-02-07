@@ -361,6 +361,7 @@ function PredictiveTab() {
     const [timeRange, setTimeRange] = useState<TimeRange>("week");
     const [transactions, setTransactions] = useState<any[]>([]);
     const [chartData, setChartData] = useState<any[]>([]);
+    const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
 
     // Prediction State
     const [prediction, setPrediction] = useState<PredictionData | null>(null);
@@ -373,6 +374,7 @@ function PredictiveTab() {
     // --- 1. Fetch Data ---
     useEffect(() => {
         const email = getStoredUserEmail();
+        setIsLoadingTransactions(true);
         axios.get(`http://localhost:8000/transactions_valid?user_email=${email}`)
             .then((response) => {
                 if (Array.isArray(response.data)) {
@@ -384,6 +386,9 @@ function PredictiveTab() {
             .catch((error) => {
                 console.error("Error fetching transactions:", error);
                 setTransactions([]);
+            })
+            .finally(() => {
+                setIsLoadingTransactions(false);
             });
     }, []);
 
@@ -534,6 +539,15 @@ function PredictiveTab() {
 
     const selectedTotal = chartData.find(d => d.key === selectedBarKey)?.amount.toFixed(2) || "0.00";
 
+    if (isLoadingTransactions) {
+        return (
+            <div className="space-y-8">
+                <h2 className="text-2xl font-bold">AI Spending Predictions</h2>
+                <Loader className="py-20" />
+            </div>
+        );
+    }
+
     return (
         <div className="space-y-6">
             <div className="flex justify-between items-center">
@@ -611,10 +625,11 @@ function PredictiveTab() {
 
             {/* --- 3. DYNAMIC AI INSIGHTS (LLM Powered) --- */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-indigo-50 border border-indigo-300 rounded-xl p-6 relative overflow-hidden">
+                <div className="bg-indigo-50 border border-indigo-300 rounded-xl p-6 relative overflow-hidden h-40">
                     {isLoadingPrediction ? (
-                        <div className="flex items-center justify-center h-full">
-                            <span className="text-indigo-500 animate-pulse font-medium">Generating Prediction...</span>
+                        <div className="flex flex-col items-center justify-center h-full gap-2">
+                            <Loader size="sm" />
+                            <span className="text-indigo-500 text-sm font-medium animate-pulse">Generating Prediction...</span>
                         </div>
                     ) : prediction ? (
                         <>
@@ -632,10 +647,11 @@ function PredictiveTab() {
                     )}
                 </div>
 
-                <div className="bg-emerald-50 border border-emerald-300 rounded-xl p-6 relative overflow-hidden">
+                <div className="bg-emerald-50 border border-emerald-300 rounded-xl p-6 relative overflow-hidden h-40">
                     {isLoadingPrediction ? (
-                        <div className="flex items-center justify-center h-full">
-                            <span className="text-emerald-500 animate-pulse font-medium">Analyzing Savings...</span>
+                        <div className="flex flex-col items-center justify-center h-full gap-2">
+                            <Loader size="sm" />
+                            <span className="text-emerald-500 text-sm font-medium animate-pulse">Analyzing Savings...</span>
                         </div>
                     ) : prediction ? (
                         <>
