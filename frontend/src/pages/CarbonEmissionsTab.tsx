@@ -17,40 +17,20 @@ import { getCarbonFootprint, type CarbonFootprintResponse } from "../api/carbon"
 const CATEGORY_COLORS = ["#059669", "#0d9488", "#0f766e", "#115e59", "#134e4a", "#14b8a6", "#2dd4bf", "#5eead4"];
 const IMPACT_COLORS = { Low: "#22c55e", Medium: "#eab308", High: "#ef4444" };
 
-type DateRangeKey = "all" | "week" | "month";
-
-function getDateRangeBounds(range: DateRangeKey): { start_date?: string; end_date?: string } {
-    const today = new Date();
-    const y = today.getFullYear();
-    const m = String(today.getMonth() + 1).padStart(2, "0");
-    const d = String(today.getDate()).padStart(2, "0");
-    const end_date = `${y}-${m}-${d}`;
-    if (range === "all") return {};
-    if (range === "week") {
-        const start = new Date(today);
-        start.setDate(start.getDate() - 6);
-        const sy = start.getFullYear();
-        const sm = String(start.getMonth() + 1).padStart(2, "0");
-        const sd = String(start.getDate()).padStart(2, "0");
-        return { start_date: `${sy}-${sm}-${sd}`, end_date };
-    }
-    if (range === "month") {
-        const start = new Date(today);
-        start.setDate(start.getDate() - 29);
-        const sy = start.getFullYear();
-        const sm = String(start.getMonth() + 1).padStart(2, "0");
-        const sd = String(start.getDate()).padStart(2, "0");
-        return { start_date: `${sy}-${sm}-${sd}`, end_date };
-    }
-    return {};
-}
+const LAST_N_OPTIONS: { value: number | null; label: string }[] = [
+    { value: null, label: "All records" },
+    { value: 10, label: "Last 10" },
+    { value: 25, label: "Last 25" },
+    { value: 50, label: "Last 50" },
+    { value: 100, label: "Last 100" },
+];
 
 export default function CarbonEmissionsTab() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [data, setData] = useState<CarbonFootprintResponse | null>(null);
     const [userEmail, setUserEmail] = useState<string | null>(null);
-    const [dateRange, setDateRange] = useState<DateRangeKey>("all");
+    const [lastN, setLastN] = useState<number | null>(null);
 
     useEffect(() => {
         const email = getStoredUserEmail();
@@ -62,12 +42,11 @@ export default function CarbonEmissionsTab() {
         }
         setLoading(true);
         setError(null);
-        const bounds = getDateRangeBounds(dateRange);
-        getCarbonFootprint(email, bounds)
+        getCarbonFootprint(email, lastN != null ? { last_n: lastN } : undefined)
             .then(setData)
             .catch((err) => setError(err instanceof Error ? err.message : "Failed to load carbon footprint"))
             .finally(() => setLoading(false));
-    }, [dateRange]);
+    }, [lastN]);
 
     if (loading) {
         return (
@@ -120,29 +99,31 @@ export default function CarbonEmissionsTab() {
         { name: "High", count: totalHigh, fill: IMPACT_COLORS.High },
     ];
 
-    const dateRangeLabel = dateRange === "all" ? "All time" : dateRange === "week" ? "Previous week" : "Previous month";
+    const lastNLabel = lastN == null ? "All records" : `Last ${lastN} records`;
 
     return (
         <div className="space-y-8">
             <div className="flex flex-wrap items-center gap-4 justify-between">
                 <h2 className="text-2xl font-bold">Carbon Emissions</h2>
                 <label className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-slate-600">Date range:</span>
+                    <span className="text-sm font-medium text-slate-600">Records:</span>
                     <select
-                        value={dateRange}
-                        onChange={(e) => setDateRange(e.target.value as DateRangeKey)}
+                        value={lastN ?? ""}
+                        onChange={(e) => setLastN(e.target.value === "" ? null : Number(e.target.value))}
                         className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium bg-white"
                     >
-                        <option value="all">All time</option>
-                        <option value="week">Previous week</option>
-                        <option value="month">Previous month</option>
+                        {LAST_N_OPTIONS.map((opt) => (
+                            <option key={opt.label} value={opt.value ?? ""}>
+                                {opt.label}
+                            </option>
+                        ))}
                     </select>
                 </label>
             </div>
             {userEmail && (
                 <p className="text-sm text-slate-500">
                     Based on spending for: {userEmail}
-                    {dateRange !== "all" && ` · ${dateRangeLabel}`}
+                    {lastN != null && ` · ${lastNLabel}`}
                 </p>
             )}
 
