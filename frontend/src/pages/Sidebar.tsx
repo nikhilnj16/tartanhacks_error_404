@@ -31,16 +31,16 @@ export default function Sidebar({
             {/* Sidebar */}
             <aside
                 className={`
-          fixed inset-y-0 left-0 z-40 w-64 bg-white
+          fixed inset-y-0 left-0 z-40 w-64 bg-[#F7FBFA] border-r border-[#E2E2E2]
           transform transition-transform duration-300
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
           md:static md:translate-x-0 md:shadow-none
         `}
             >
                 {/* Header */}
-                <div className="h-14 flex items-center justify-between px-4 border-b">
+                <div className="h-14 flex items-center justify-between px-4 border-b border-[#E2E2E2]">
                     {/* <span className="font-bold text-lg">BudgetBruh</span> */}
-                    <button onClick={onClose} className="md:hidden text-xl">
+                    <button onClick={onClose} className="md:hidden text-xl text-[#19747E]">
                         ✕
                     </button>
                 </div>
@@ -58,8 +58,8 @@ export default function Sidebar({
                   w-full px-4 py-3 rounded-xl border-2 text-left font-medium
                   transition
                   ${isActive
-                                        ? "bg-yellow-200 border-black"
-                                        : "border-black hover:bg-slate-100"
+                                        ? "bg-[#19747E] text-white shadow"
+                                        : "text-[#19747E] hover:bg-[#D1E8E2]"
                                     }
                 `}
                             >

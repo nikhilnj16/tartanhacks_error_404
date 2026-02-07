@@ -51,7 +51,7 @@ export default function Dashboard() {
     const [activeTab, setActiveTab] = useState<Tab>("spending");
 
     return (
-        <div className="h-screen w-full flex bg-slate-100 overflow-hidden">
+        <div className="h-screen w-full flex overflow-hidden bg-[#D1E8E2]">
             {/* Sidebar */}
             <Sidebar
                 isOpen={sidebarOpen}
@@ -66,7 +66,7 @@ export default function Dashboard() {
             {/* Main Area */}
             <div className="flex-1 flex flex-col ">
                 {/* Top Navbar */}
-                <header className="h-14 bg-white shadow sticky top-0 z-20">
+                <header className="h-14 bg-[#F7FBFA] border-b border-[#E2E2E2] sticky top-0 z-20">
                     <div className="relative h-full flex items-center px-4">
                         {/* Left: Menu button */}
                         <button
@@ -77,7 +77,7 @@ export default function Dashboard() {
                         </button>
 
                         {/* Center: Title */}
-                        <h1 className="absolute left-1/2 -translate-x-1/2 font-bold text-lg">
+                        <h1 className="absolute left-1/2 -translate-x-1/2 font-bold text-lg text-[#19747E]">
                             BudgetBruh
                         </h1>
                     </div>
