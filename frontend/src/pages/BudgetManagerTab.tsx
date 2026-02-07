@@ -24,6 +24,14 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 const DEFAULT_COLOR = "bg-purple-500";
 
+const LAST_N_OPTIONS: { value: number | null; label: string }[] = [
+    { value: null, label: "All records" },
+    { value: 10, label: "Last 10" },
+    { value: 25, label: "Last 25" },
+    { value: 50, label: "Last 50" },
+    { value: 100, label: "Last 100" },
+];
+
 type BudgetItem = {
     name: string;
     spent: number;
@@ -59,6 +67,7 @@ export default function BudgetManagerTab() {
     const [inputLimits, setInputLimits] = useState<Record<string, string>>({});
     const [saving, setSaving] = useState(false);
     const [saveMessage, setSaveMessage] = useState<string | null>(null);
+    const [lastN, setLastN] = useState<number | null>(null);
 
     useEffect(() => {
         const email = getStoredUserEmail();
@@ -69,7 +78,9 @@ export default function BudgetManagerTab() {
             return;
         }
         let cancelled = false;
-        Promise.all([getBudget(email), getBudgetPlan(email)])
+        setLoading(true);
+        setError(null);
+        Promise.all([getBudget(email, lastN != null ? { last_n: lastN } : undefined), getBudgetPlan(email)])
             .then(([b, p]) => {
                 if (!cancelled) {
                     setBudget(b);
@@ -88,7 +99,7 @@ export default function BudgetManagerTab() {
                 if (!cancelled) setLoading(false);
             });
         return () => { cancelled = true; };
-    }, []);
+    }, [lastN]);
 
     // Initialize input strings from plan + budget (plan value or default max(spent*1.2, 100))
     useEffect(() => {
@@ -177,12 +188,33 @@ export default function BudgetManagerTab() {
             .finally(() => setSaving(false));
     };
 
+    const lastNLabel = lastN == null ? "All records" : `Last ${lastN} records`;
+
     return (
         <div className="space-y-8">
-            <h2 className="text-2xl font-bold">Monthly Budget Tracker</h2>
+            <div className="flex flex-wrap items-center gap-4 justify-between">
+                <h2 className="text-2xl font-bold">Monthly Budget Tracker</h2>
+                <label className="flex items-center gap-2">
+                    <span className="text-sm font-medium text-slate-600">Records:</span>
+                    <select
+                        value={lastN ?? ""}
+                        onChange={(e) => setLastN(e.target.value === "" ? null : Number(e.target.value))}
+                        className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium bg-white"
+                    >
+                        {LAST_N_OPTIONS.map((opt) => (
+                            <option key={opt.label} value={opt.value ?? ""}>
+                                {opt.label}
+                            </option>
+                        ))}
+                    </select>
+                </label>
+            </div>
 
             {userEmail && (
-                <p className="text-sm text-slate-500">Using account: {userEmail}</p>
+                <p className="text-sm text-slate-500">
+                    Using account: {userEmail}
+                    {lastN != null && ` · ${lastNLabel}`}
+                </p>
             )}
 
             {hasNoData && (

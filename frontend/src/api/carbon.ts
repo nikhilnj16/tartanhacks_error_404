@@ -34,17 +34,13 @@ export async function getCarbonFootprint(
   userEmail: string,
   options?: {
     include_transactions?: boolean;
-    limit?: number;
-    start_date?: string;
-    end_date?: string;
+    last_n?: number;
   }
 ): Promise<CarbonFootprintResponse> {
   const email = userEmail.trim().toLowerCase();
   const params = new URLSearchParams({ user_email: email });
   if (options?.include_transactions) params.set("include_transactions", "true");
-  if (options?.limit != null) params.set("limit", String(options.limit));
-  if (options?.start_date) params.set("start_date", options.start_date);
-  if (options?.end_date) params.set("end_date", options.end_date);
+  if (options?.last_n != null && options.last_n > 0) params.set("last_n", String(options.last_n));
   const res = await fetch(apiUrl(`/carbon/footprint?${params}`));
   if (!res.ok) {
     const text = await res.text();

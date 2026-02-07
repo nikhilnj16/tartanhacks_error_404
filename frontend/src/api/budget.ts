@@ -26,9 +26,13 @@ export function getStoredUserEmail(): string | null {
   }
 }
 
-export async function getBudget(userEmail: string): Promise<BudgetResponse> {
+export async function getBudget(
+  userEmail: string,
+  options?: { last_n?: number }
+): Promise<BudgetResponse> {
   const email = userEmail.trim().toLowerCase();
   const params = new URLSearchParams({ user_email: email });
+  if (options?.last_n != null && options.last_n > 0) params.set("last_n", String(options.last_n));
   const res = await fetch(apiUrl(`/generate_budget?${params}`));
   if (!res.ok) {
     const text = await res.text();
@@ -85,6 +89,6 @@ export async function updateBudgetPlan(
   });
   const data = (await res.json()) as { message?: string; ok?: boolean };
   if (!res.ok) throw new Error(data?.message ?? "Failed to update budget");
-  return data;
+  return data as { message: string; ok: boolean };
 }
 

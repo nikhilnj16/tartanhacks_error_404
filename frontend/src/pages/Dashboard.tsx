@@ -328,42 +328,318 @@ function SpendingTab({
     );
 }
 
-/* -------------------- Predictive Analysis Tab -------------------- */
+type TimeRange = "week" | "month" | "total";
+
+// Helper: Get User Email (Replace with your actual auth context)
+
+
+// Helper: Ensure consistent date strings (YYYY-MM-DD)
+const getYYYYMMDD = (d: Date) => {
+    return d.toISOString().split('T')[0];
+};
+interface PredictionData {
+    prediction_amount: number;
+    percentage_change: number;
+    savings_category: string;
+    savings_amount: number;
+    months_saved: number;
+}
+
 function PredictiveTab() {
+    // --- State ---
+    const [timeRange, setTimeRange] = useState<TimeRange>("week");
+    const [transactions, setTransactions] = useState<any[]>([]);
+    const [chartData, setChartData] = useState<any[]>([]);
+
+    // Prediction State
+    const [prediction, setPrediction] = useState<PredictionData | null>(null);
+    const [isLoadingPrediction, setIsLoadingPrediction] = useState(false);
+
+    // Interaction State
+    const [selectedBarKey, setSelectedBarKey] = useState<string | null>(null);
+    const [selectedTransactions, setSelectedTransactions] = useState<any[]>([]);
+
+    // --- 1. Fetch Data ---
+    useEffect(() => {
+        const email = getStoredUserEmail();
+        axios.get(`http://localhost:8000/transactions_valid?user_email=${email}`)
+            .then((response) => {
+                if (Array.isArray(response.data)) {
+                    setTransactions(response.data);
+                } else {
+                    setTransactions([]);
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching transactions:", error);
+                setTransactions([]);
+            });
+    }, []);
+
+    // --- 2. Call LLM Prediction (Triggered when transactions are loaded) ---
+    useEffect(() => {
+        if (!transactions || transactions.length === 0) return;
+
+        // Avoid re-fetching if we already have data
+        if (prediction) return;
+
+        setIsLoadingPrediction(true);
+
+    }, [transactions]);
+
+
+    useEffect(() => {
+        // Wait for transactions to load first (optional, but looks better)
+        if (!transactions || transactions.length === 0) return;
+
+        // Prevent re-fetching if we already have a prediction
+        if (prediction) return;
+
+        setIsLoadingPrediction(true);
+        const email = getStoredUserEmail();
+        axios.get(`http://localhost:8000/prediction?user_email=${email}`)
+            .then((response) => {
+                console.log("Prediction received:", response.data);
+
+                // FIX 1: Check for the object properties, NOT Array.isArray
+                if (response.data && response.data.prediction_amount !== undefined) {
+
+                    // FIX 2: Set the PREDICTION state, not transactions
+                    setPrediction(response.data);
+                } else {
+                    console.warn("Invalid prediction format:", response.data);
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching prediction:", error);
+            })
+            .finally(() => {
+                // FIX 3: Turn off loading state
+                setIsLoadingPrediction(false);
+            });
+
+    }, [transactions]);
+
+    // --- 3. Process Graph Data (Same logic as before) ---
+    useEffect(() => {
+        if (!transactions || transactions.length === 0) return;
+
+        // Sort to get the latest transaction
+        const sortedTxns = [...transactions].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+        const lastTxn = sortedTxns[sortedTxns.length - 1];
+
+        const endDate = new Date(lastTxn.date);
+        endDate.setHours(23, 59, 59, 999);
+
+        const groupedData: { [key: string]: { amount: number, txns: any[], label: string, sortIndex: number } } = {};
+
+        let startDate = new Date(endDate);
+
+        if (timeRange === "week") {
+            startDate.setDate(endDate.getDate() - 6);
+            startDate.setHours(0, 0, 0, 0);
+            for (let i = 0; i < 7; i++) {
+                const d = new Date(startDate);
+                d.setDate(startDate.getDate() + i);
+                const key = getYYYYMMDD(d);
+                const label = d.toLocaleDateString('en-US', { weekday: 'short' });
+                groupedData[key] = { amount: 0, txns: [], label: label, sortIndex: i };
+            }
+        } else if (timeRange === "month") {
+            startDate.setDate(endDate.getDate() - 27);
+            startDate.setHours(0, 0, 0, 0);
+            for (let i = 0; i < 4; i++) {
+                const key = `week-${i}`;
+                const label = `Week ${i + 1}`;
+                groupedData[key] = { amount: 0, txns: [], label: label, sortIndex: i };
+            }
+        } else {
+            startDate.setMonth(endDate.getMonth() - 5);
+            startDate.setDate(1);
+            startDate.setHours(0, 0, 0, 0);
+            for (let i = 0; i < 6; i++) {
+                const d = new Date(startDate);
+                d.setMonth(startDate.getMonth() + i);
+                const key = d.toISOString().substring(0, 7);
+                const label = d.toLocaleDateString('en-US', { month: 'short' });
+                groupedData[key] = { amount: 0, txns: [], label: label, sortIndex: i };
+            }
+        }
+
+        transactions.forEach(t => {
+            if (!t.date) return;
+            const tDate = new Date(t.date);
+            const isExpenses = t.amount < 0;
+
+            let categoryLabel = "Uncategorized";
+            if (Array.isArray(t.category)) {
+                categoryLabel = t.category[0];
+            } else if (typeof t.category === 'string') {
+                categoryLabel = t.category;
+            }
+            const isImportant = categoryLabel === "Important";
+
+            if (tDate >= startDate && tDate <= endDate && isExpenses && !isImportant) {
+                let groupKey = "";
+                if (timeRange === "week") {
+                    groupKey = t.date;
+                } else if (timeRange === "month") {
+                    const diffTime = tDate.getTime() - startDate.getTime();
+                    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                    const weekIndex = Math.floor(diffDays / 7);
+                    const safeWeekIndex = Math.min(weekIndex, 3);
+                    if (safeWeekIndex >= 0) groupKey = `week-${safeWeekIndex}`;
+                } else {
+                    groupKey = t.date.substring(0, 7);
+                }
+                if (groupedData[groupKey]) {
+                    groupedData[groupKey].amount += Math.abs(t.amount);
+                    groupedData[groupKey].txns.push(t);
+                }
+            }
+        });
+
+        const finalChartData = Object.values(groupedData)
+            .sort((a, b) => a.sortIndex - b.sortIndex)
+            .map((item, index) => ({
+                key: item.label + index,
+                ...item,
+                amount: parseFloat(item.amount.toFixed(2))
+            }));
+
+        setChartData(finalChartData);
+        setSelectedBarKey(null);
+        setSelectedTransactions([]);
+
+    }, [timeRange, transactions]);
+
+    const handleBarClick = (data: any) => {
+        if (data && data.activePayload && data.activePayload.length > 0) {
+            const payload = data.activePayload[0].payload;
+            setSelectedBarKey(payload.key);
+            setSelectedTransactions(payload.txns);
+        }
+    };
+
+    const selectedTotal = chartData.find(d => d.key === selectedBarKey)?.amount.toFixed(2) || "0.00";
+
     return (
-        <>
-            <h2 className="text-2xl font-bold">
-                AI-Powered Spending Predictions
-            </h2>
-
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-indigo-50 border border-indigo-300 rounded-xl p-6">
-                    <h3 className="font-semibold mb-2">✨ Next Month Prediction</h3>
-                    <p className="text-5xl font-bold text-indigo-600">$1,380</p>
-                    <p className="text-slate-600 mt-2">
-                        +11% from this month
-                    </p>
+        <div className="space-y-6">
+            <div className="flex justify-between items-center">
+                <h2 className="text-2xl font-bold">AI Spending Predictions</h2>
+                <div className="flex bg-white rounded-lg p-1 shadow-sm border border-slate-200">
+                    {(["week", "month", "total"] as TimeRange[]).map((range) => (
+                        <button
+                            key={range}
+                            onClick={() => setTimeRange(range)}
+                            className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${timeRange === range
+                                ? "bg-rose-500 text-white shadow-sm"
+                                : "text-slate-500 hover:bg-slate-50"
+                                }`}
+                        >
+                            {range === "week" ? "Week" : range === "month" ? "Month" : "Total"}
+                        </button>
+                    ))}
                 </div>
+            </div>
 
-                <div className="bg-rose-50 border border-rose-300 rounded-xl p-6">
-                    <h3 className="font-semibold mb-2 flex items-center gap-2">
-                        ⚠️ Risk Alert
-                    </h3>
-                    <p className="text-slate-700">
-                        You're likely to overspend on Dining Out next week based
-                        on your recent patterns.
-                    </p>
+            {/* --- Graph Section --- */}
+            <section className="bg-white rounded-xl shadow p-6">
+                <h3 className="text-xl font-bold mb-2">Discretionary Spending</h3>
+                <div className="h-64 w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={chartData} onClick={handleBarClick}>
+                            <XAxis dataKey="label" fontSize={12} tickMargin={5} />
+                            <YAxis fontSize={12} />
+                            <Tooltip cursor={{ fill: '#f3f4f6' }} />
+                            <Bar dataKey="amount" radius={[4, 4, 0, 0]} cursor="pointer">
+                                {chartData.map((entry, index) => (
+                                    <Cell
+                                        key={`cell-${index}`}
+                                        fill={entry.key === selectedBarKey ? "#f43f5e" : "#fda4af"}
+                                    />
+                                ))}
+                            </Bar>
+                        </BarChart>
+                    </ResponsiveContainer>
                 </div>
             </section>
 
-            <section className="bg-emerald-50 border border-emerald-300 rounded-xl p-6">
-                <h3 className="font-semibold mb-2">💰 Savings Opportunity</h3>
-                <p className="text-slate-700">
-                    By reducing dining out by <strong>25%</strong>, you could
-                    save an extra <strong>$100/month</strong> and reach your
-                    MacBook Pro goal <strong>2 months earlier</strong>.
-                </p>
+            {/* --- Details Section --- */}
+            {selectedBarKey && (
+                <section className="bg-white border-l-4 border-rose-500 rounded-r-xl shadow-sm p-6 animate-in fade-in slide-in-from-top-4 duration-300">
+                    <div className="flex justify-between items-center mb-4">
+                        <h3 className="font-bold text-lg text-slate-800">Transactions</h3>
+                        <span className="text-2xl font-bold text-rose-600">${selectedTotal}</span>
+                    </div>
+                    <div className="space-y-3 max-h-80 overflow-y-auto pr-2">
+                        {selectedTransactions.length > 0 ? selectedTransactions.map((t, idx) => {
+                            const confidence = Array.isArray(t.category) && t.category.length > 1
+                                ? (t.category[1] * 100).toFixed(0) : "N/A";
+                            const categoryName = Array.isArray(t.category) ? t.category[0] : t.category;
+
+                            return (
+                                <div key={idx} className="flex justify-between items-center p-3 bg-slate-50 rounded-lg border border-slate-100">
+                                    <div className="flex flex-col">
+                                        <span className="font-semibold text-slate-700">{t.place}</span>
+                                        <div className="flex items-center gap-2 mt-1">
+                                            <span className="text-xs bg-slate-200 text-slate-600 px-2 py-0.5 rounded">{categoryName}</span>
+                                            <span className="text-xs text-slate-400">{t.date}</span>
+                                        </div>
+                                    </div>
+                                    <div className="text-right">
+                                        <div className="font-bold text-rose-500">-${Math.abs(t.amount).toFixed(2)}</div>
+                                        {confidence !== "N/A" && <div className="text-xs text-indigo-600 font-medium mt-1">{confidence}% AI Conf.</div>}
+                                    </div>
+                                </div>
+                            );
+                        }) : <p className="text-slate-400 italic text-sm">No transactions.</p>}
+                    </div>
+                </section>
+            )}
+
+            {/* --- 3. DYNAMIC AI INSIGHTS (LLM Powered) --- */}
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div className="bg-indigo-50 border border-indigo-300 rounded-xl p-6 relative overflow-hidden">
+                    {isLoadingPrediction ? (
+                        <div className="flex items-center justify-center h-full">
+                            <span className="text-indigo-500 animate-pulse font-medium">Generating Prediction...</span>
+                        </div>
+                    ) : prediction ? (
+                        <>
+                            <h3 className="font-semibold mb-2">✨ Next Month Prediction</h3>
+                            <p className="text-5xl font-bold text-indigo-600">
+                                ${prediction.prediction_amount.toLocaleString()}
+                            </p>
+                            <p className="text-slate-600 mt-2">
+                                {prediction.percentage_change > 0 ? "+" : "-"}
+                                {prediction.percentage_change.toFixed(2)}% from this month
+                            </p>
+                        </>
+                    ) : (
+                        <div className="text-slate-400">Waiting for data...</div>
+                    )}
+                </div>
+
+                <div className="bg-emerald-50 border border-emerald-300 rounded-xl p-6 relative overflow-hidden">
+                    {isLoadingPrediction ? (
+                        <div className="flex items-center justify-center h-full">
+                            <span className="text-emerald-500 animate-pulse font-medium">Analyzing Savings...</span>
+                        </div>
+                    ) : prediction ? (
+                        <>
+                            <h3 className="font-semibold mb-2">💰 Savings Opportunity</h3>
+                            <p className="text-slate-700">
+                                By reducing <strong>{prediction.savings_category}</strong> by <strong>25%</strong>,
+                                you could save an extra <strong>${prediction.savings_amount}/month</strong> and
+                                reach your goal <strong>{prediction.months_saved} months earlier</strong>.
+                            </p>
+                        </>
+                    ) : (
+                        <div className="text-slate-400">Waiting for data...</div>
+                    )}
+                </div>
             </section>
-        </>
+        </div>
     );
 }
