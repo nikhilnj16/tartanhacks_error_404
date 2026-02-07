@@ -208,7 +208,6 @@ export default function BudgetManagerTab() {
             <section className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 space-y-4">
                 <h3 className="font-semibold text-lg">Savings</h3>
                 <p className="text-2xl font-bold text-emerald-700">${savings.toFixed(2)}</p>
-                <p className="text-sm text-slate-600">This matches the savings shown on the Spending Analysis tab.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label htmlFor="savings-goal" className="block text-sm font-medium text-slate-700 mb-1">
@@ -250,98 +249,100 @@ export default function BudgetManagerTab() {
                         <span className="text-sm text-green-600">{saveMessage}</span>
                     )}
                 </div>
-            </section>
+            </section >
 
             {/* Total budget limits card with Save button */}
-            {items.length > 0 && (
-                <section className="flex flex-wrap items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
-                    <div className="flex items-center gap-2">
-                        <span className="text-slate-600">Total budget limits:</span>
-                        <span className="font-semibold">${totalAllocated.toFixed(2)}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <span className="text-slate-600">Your income:</span>
-                        <span className="font-semibold text-green-600">${income.toFixed(2)}</span>
-                    </div>
-                    {exceedsIncome && (
-                        <p className="text-amber-700 text-sm font-medium rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
-                            You’re allocating more than your monthly income. This may be from savings or previous months.
-                        </p>
-                    )}
-                    {!allLimitsValid && (
-                        <span className="text-amber-700 text-sm">
-                            Each budget limit must be a number greater than 0.
-                        </span>
-                    )}
-                    <button
-                        type="button"
-                        onClick={handleSavePlan}
-                        disabled={!canSave}
-                        className="rounded-lg bg-slate-800 px-4 py-2 text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-700"
-                    >
-                        {saving ? "Saving…" : "Save budget plan"}
-                    </button>
-                    {saveMessage && (
-                        <span className="text-sm text-green-600">{saveMessage}</span>
-                    )}
-                </section>
-            )}
+            {
+                items.length > 0 && (
+                    <section className="flex flex-wrap items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
+                        <div className="flex items-center gap-2">
+                            <span className="text-slate-600">Total budget limits:</span>
+                            <span className="font-semibold">${totalAllocated.toFixed(2)}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="text-slate-600">Your income:</span>
+                            <span className="font-semibold text-green-600">${income.toFixed(2)}</span>
+                        </div>
+                        {exceedsIncome && (
+                            <p className="text-amber-700 text-sm font-medium rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
+                                You’re allocating more than your monthly income. This may be from savings or previous months.
+                            </p>
+                        )}
+                        {!allLimitsValid && (
+                            <span className="text-amber-700 text-sm">
+                                Each budget limit must be a number greater than 0.
+                            </span>
+                        )}
+                        <button
+                            type="button"
+                            onClick={handleSavePlan}
+                            disabled={!canSave}
+                            className="rounded-lg bg-slate-800 px-4 py-2 text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-700"
+                        >
+                            {saving ? "Saving…" : "Save budget plan"}
+                        </button>
+                        {saveMessage && (
+                            <span className="text-sm text-green-600">{saveMessage}</span>
+                        )}
+                    </section>
+                )
+            }
 
             {/* Category Cards */}
-            {items.length === 0 ? (
-                <p className="text-slate-600">No spending by category yet. Transactions will appear here.</p>
-            ) : (
-                items.map((item) => {
-                    const limit = getNumericLimit(item.name);
-                    const percent = limit > 0
-                        ? Math.min(Math.round((item.spent / limit) * 100), 100)
-                        : 0;
-                    const isOver = limit > 0 && item.spent > limit;
-                    const inputVal = inputLimits[item.name] ?? String(item.limit);
-                    const isInvalid = inputVal !== "" && !(Number.isFinite(parseFloat(inputVal)) && parseFloat(inputVal) > 0);
+            {
+                items.length === 0 ? (
+                    <p className="text-slate-600">No spending by category yet. Transactions will appear here.</p>
+                ) : (
+                    items.map((item) => {
+                        const limit = getNumericLimit(item.name);
+                        const percent = limit > 0
+                            ? Math.min(Math.round((item.spent / limit) * 100), 100)
+                            : 0;
+                        const isOver = limit > 0 && item.spent > limit;
+                        const inputVal = inputLimits[item.name] ?? String(item.limit);
+                        const isInvalid = inputVal !== "" && !(Number.isFinite(parseFloat(inputVal)) && parseFloat(inputVal) > 0);
 
-                    return (
-                        <div
-                            key={item.name}
-                            className={`rounded-xl border-2 p-6 space-y-3 ${
-                                isOver
+                        return (
+                            <div
+                                key={item.name}
+                                className={`rounded-xl border-2 p-6 space-y-3 ${isOver
                                     ? "bg-red-50 border-red-400"
                                     : "bg-white border-slate-300"
-                            }`}
-                        >
-                            <div className="flex flex-wrap justify-between items-center gap-2">
-                                <h3 className="font-semibold text-lg">{item.name}</h3>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-slate-600">${item.spent.toFixed(2)} /</span>
-                                    <label className="sr-only">Budget limit for {item.name} (must be greater than 0)</label>
-                                    <input
-                                        type="number"
-                                        min={0.01}
-                                        step={10}
-                                        placeholder="0"
-                                        value={inputVal}
-                                        onChange={(e) => handleLimitChange(item.name, e.target.value)}
-                                        className={`w-28 rounded border px-2 py-1 text-right font-semibold ${
-                                            isInvalid ? "border-red-400 bg-red-50" : "border-slate-300"
-                                        }`}
+                                    }`}
+                            >
+                                <div className="flex flex-wrap justify-between items-center gap-2">
+                                    <h3 className="font-semibold text-lg">{item.name}</h3>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-slate-600">${item.spent.toFixed(2)} /</span>
+                                        <label className="sr-only">Budget limit for {item.name} (must be greater than 0)</label>
+                                        <input
+                                            type="number"
+                                            min={0.01}
+                                            step={10}
+                                            placeholder="0"
+                                            value={inputVal}
+                                            onChange={(e) => handleLimitChange(item.name, e.target.value)}
+                                            className={`w-28 rounded border px-2 py-1 text-right font-semibold ${isInvalid ? "border-red-400 bg-red-50" : "border-slate-300"
+                                                }`}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="w-full h-4 bg-white border-2 border-slate-300 rounded-full overflow-hidden">
+                                    <div
+                                        className={`h-full ${item.color}`}
+                                        style={{ width: `${percent}%` }}
                                     />
                                 </div>
+                                {isOver && (
+                                    <div className="flex items-center gap-2 text-red-600 text-sm font-medium">
+                                        Over budget by ${(item.spent - limit).toFixed(2)}
+                                    </div>
+                                )}
                             </div>
-                            <div className="w-full h-4 bg-white border-2 border-slate-300 rounded-full overflow-hidden">
-                                <div
-                                    className={`h-full ${item.color}`}
-                                    style={{ width: `${percent}%` }}
-                                />
-                            </div>
-                            {isOver && (
-                                <div className="flex items-center gap-2 text-red-600 text-sm font-medium">
-                                    Over budget by ${(item.spent - limit).toFixed(2)}
-                                </div>
-                            )}
-                        </div>
-                    );
-                })
-            )}
-        </div>
+                        );
+                    })
+                )
+            }
+        </div >
     );
 }

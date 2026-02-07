@@ -55,7 +55,10 @@ export default function Dashboard() {
     // EFFECT 1: For Graph 2 (Bar Chart - Weekly/Daily Pattern)
     // ---------------------------------------------------------
     useEffect(() => {
-        axios.get("http://localhost:8000/transactions")
+        const email = getStoredUserEmail();
+        if (!email) return;
+
+        axios.get(`http://localhost:8000/transactions?user_email=${email}`)
             .then((response) => {
                 const transactions = response.data;
 
@@ -117,7 +120,10 @@ export default function Dashboard() {
     // EFFECT 2: For Graph 1 (Pie Chart) & Total Monthly Spend
     // ---------------------------------------------------------
     useEffect(() => {
-        axios.get("http://localhost:8000/analysis")
+        const email = getStoredUserEmail();
+        if (!email) return;
+
+        axios.get(`http://localhost:8000/analysis?user_email=${email}`)
             .then((response) => {
                 const { spending, monthly_expenditure } = response.data;
 
@@ -245,9 +251,8 @@ function SpendingTab({ spendingData, weeklyData, totalMonthlySpend }: SpendingTa
                             <p className="text-2xl font-bold text-emerald-700">
                                 ${savings !== null ? savings.toFixed(2) : "0.00"}
                             </p>
-                            <p className="text-sm text-slate-600 mt-1">Same as on the Budget Planner.</p>
                             {savingsGoal && (
-                                <p className="text-lg font-semibold mt-3">Goal: {savingsGoal}</p>
+                                <p className="text-lg font-semibold mt-3">Goal: ${savingsGoal}</p>
                             )}
                             {savingsReason && (
                                 <p className="text-sm text-slate-600 mt-1">Reason: {savingsReason}</p>
