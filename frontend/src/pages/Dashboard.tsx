@@ -3,6 +3,7 @@ import axios from "axios";
 import Sidebar from "./Sidebar";
 import BudgetManagerTab from "./BudgetManagerTab";
 import SubscriptionManagerTab from "./SubscriptionManagerTab";
+import CarbonEmissionsTab from "./CarbonEmissionsTab";
 import UserSettingsTab from "./UserSettingsTab";
 import MoneyRain from "../components/MoneyRain";
 import { getBudget, getBudgetPlan, getStoredUserEmail } from "../api/budget";
@@ -209,6 +210,7 @@ export default function Dashboard() {
                     {activeTab === "predictive" && <PredictiveTab />}
                     {activeTab === "budget" && <BudgetManagerTab />}
                     {activeTab === "subscriptions" && <SubscriptionManagerTab />}
+                    {activeTab === "carbon" && <CarbonEmissionsTab />}
                     {activeTab === "settings" && <UserSettingsTab />}
                 </main>
             </div>
