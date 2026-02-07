@@ -1,4 +1,11 @@
 from collections import defaultdict
+from firebase_admin import firestore
+from database import init_db
+from dotenv import load_dotenv
+
+load_dotenv()
+
+init_db()
 
 from fastapi import APIRouter, Depends, Query
 
@@ -8,22 +15,29 @@ from google.cloud.firestore import Client as FirestoreClient
 
 router = APIRouter()
 
+def return_email():
+    db = firestore.client()
+    users = db.collection("users").get()
+    email = ""
+    for user in users:
+        email = user.to_dict()['email']
+        break
+    return email
+
 
 @router.get("/analysis")
-def get_analysis(
-    user_email: str = Query(..., description="User email to fetch analysis for"),
-    db: FirestoreClient = Depends(get_db),
-):
-    """Return debit/credit by category for the given user's transactions. No auth header required."""
-    transactions = get_transactions_for_user(db, user_email)
+def get_analysis():
+    db = firestore.client()
+    transactions = db.collection("transactions").document(return_email()).get()
+    transactions = transactions.to_dict()["transactions"]
     debit = defaultdict(float)
     credit = defaultdict(float)
-    for t in transactions:
-        amount = t.get("amount", 0)
-        category = t.get("category", "Other")
-        if isinstance(amount, (int, float)):
-            if amount < 0:
-                debit[category] += round(-1 * amount, 2)
-            else:
-                credit[category] += round(amount, 2)
-    return {"debit": dict(debit), "credit": dict(credit)}
+    subscriptions = defaultdict(float)
+    for transaction in transactions:
+        if transaction["amount"] < 0:
+            debit[transaction["category"]] += round(-1 * transaction["amount"], 2)
+            if transaction["category"] == "Subscriptions":
+                subscriptions[transaction["place"]] += round(-1 * transaction["amount"], 2)
+        else:
+            credit[transaction["category"]] += round(transaction["amount"], 2)
+    return {"debit": debit, "credit": credit, "subscriptions": subscriptions}
