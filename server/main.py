@@ -1,9 +1,21 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import transactions, analysis
+
+from database import init_db
+from routes import transactions, analysis, auth
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    init_db()
+    yield
+
 
 app = FastAPI(
     title="TartanHacks Error 404 API",
+    lifespan=lifespan,
 )
 
 app.add_middleware(
@@ -14,6 +26,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(auth.router)
 app.include_router(transactions.router)
 app.include_router(analysis.router)
 
