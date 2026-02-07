@@ -1,2 +1,8 @@
 fastapi[standard]==0.115.0
 python-dotenv
+joblib 
+scipy
+scikit-learn
+pandas
+numpy
+requests
