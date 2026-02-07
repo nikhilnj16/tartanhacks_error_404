@@ -6,20 +6,13 @@ import calendar
 
 router = APIRouter()
 
-def return_email():
-    # Note: Ideally this should come from the logged-in user's token
-    db = firestore.client()
-    users = db.collection("users").get()
-    email = ""
-    for user in users:
-        email = user.to_dict().get('email')
-    return email
+
 
 @router.get("/analysis")
-def get_analysis():
+def get_analysis(user_email: str):
     db = firestore.client()
     
-    email = return_email()
+    email = user_email
     if not email:
         return {"error": "No user found"}
         
