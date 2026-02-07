@@ -1,21 +1,39 @@
+/**
+ * Paths to subscription icons. Place your SVG (or image) files in
+ * frontend/public/subscription-icons/ and add or update entries here.
+ * Keys must match the `icon` field on each subscription.
+ */
+const SUBSCRIPTION_ICON_PATHS: Record<string, string> = {
+    spotify: "/subscription-icons/spotify.svg",
+    netflix: "/subscription-icons/netflix.svg",
+    amazon: "/subscription-icons/amazon.svg",
+    apple: "/subscription-icons/apple.svg",
+    disney: "/subscription-icons/disney.svg",
+    github: "/subscription-icons/github.svg",
+    openai: "/subscription-icons/openai.svg",
+};
+
 type Subscription = {
     name: string;
-    price: number;
+    amount: number;
+    lastPaidDate: string;
     renewal: string;
+    cancellationUrl: string;
+    icon: string;
 };
 
 const subscriptions: Subscription[] = [
-    { name: "Spotify Premium", price: 10.99, renewal: "Feb 15" },
-    { name: "Netflix Standard", price: 15.49, renewal: "Feb 20" },
-    { name: "Amazon Prime", price: 14.99, renewal: "Feb 10" },
-    { name: "Apple iCloud+", price: 2.99, renewal: "Feb 25" },
-    { name: "Disney+", price: 13.99, renewal: "Feb 18" },
-    { name: "GitHub Pro", price: 4.0, renewal: "Feb 12" },
-    { name: "ChatGPT Plus", price: 20.0, renewal: "Feb 28" },
+    { name: "Spotify Premium", amount: 10.99, lastPaidDate: "Jan 15, 2025", renewal: "Feb 15", cancellationUrl: "https://www.spotify.com/account/subscription/", icon: "spotify" },
+    { name: "Netflix Standard", amount: 15.49, lastPaidDate: "Jan 20, 2025", renewal: "Feb 20", cancellationUrl: "https://www.netflix.com/cancelplan", icon: "netflix" },
+    { name: "Amazon Prime", amount: 14.99, lastPaidDate: "Jan 10, 2025", renewal: "Feb 10", cancellationUrl: "https://www.amazon.com/gp/primecentral", icon: "amazon" },
+    { name: "Apple iCloud+", amount: 2.99, lastPaidDate: "Jan 25, 2025", renewal: "Feb 25", cancellationUrl: "https://support.apple.com/guide/icloud", icon: "apple" },
+    { name: "Disney+", amount: 13.99, lastPaidDate: "Jan 18, 2025", renewal: "Feb 18", cancellationUrl: "https://www.disneyplus.com/account", icon: "disney" },
+    { name: "GitHub Pro", amount: 4.0, lastPaidDate: "Jan 12, 2025", renewal: "Feb 12", cancellationUrl: "https://github.com/settings/billing", icon: "github" },
+    { name: "ChatGPT Plus", amount: 20.0, lastPaidDate: "Jan 28, 2025", renewal: "Feb 28", cancellationUrl: "https://help.openai.com/en/articles/6893482-how-do-i-cancel-my-subscription", icon: "openai" },
 ];
 
 const totalMonthlyCost = subscriptions.reduce(
-    (sum, sub) => sum + sub.price,
+    (sum, sub) => sum + sub.amount,
     0
 );
 
@@ -38,20 +56,41 @@ export default function SubscriptionManagerTab() {
                 {subscriptions.map((sub) => (
                     <div
                         key={sub.name}
-                        className="bg-white border-2 border-black rounded-xl p-5 flex justify-between items-center"
+                        className="bg-white border-2 border-black rounded-xl p-5 flex flex-wrap justify-between items-center gap-3"
                     >
-                        <div>
-                            <p className="font-semibold text-lg">
-                                {sub.name}
-                            </p>
-                            <p className="text-sm text-slate-600">
-                                Next renewal: {sub.renewal}
-                            </p>
+                        <div className="min-w-0 flex items-center gap-4">
+                            {SUBSCRIPTION_ICON_PATHS[sub.icon] && (
+                                <img
+                                    src={SUBSCRIPTION_ICON_PATHS[sub.icon]}
+                                    alt=""
+                                    className="h-12 w-12 rounded-xl object-contain flex-shrink-0 bg-slate-50"
+                                />
+                            )}
+                            <div>
+                                <p className="font-semibold text-lg">
+                                    {sub.name}
+                                </p>
+                                <p className="text-sm text-slate-600">
+                                    Amount: ${sub.amount.toFixed(2)}/mo
+                                </p>
+                                <p className="text-sm text-slate-600">
+                                    Last paid: {sub.lastPaidDate} · Next renewal: {sub.renewal}
+                                </p>
+                            </div>
                         </div>
-
-                        <p className="text-lg font-bold">
-                            ${sub.price.toFixed(2)}
-                        </p>
+                        <div className="flex items-center gap-3">
+                            <p className="text-lg font-bold">
+                                ${sub.amount.toFixed(2)}
+                            </p>
+                            <a
+                                href={sub.cancellationUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rounded-lg border-2 border-red-500 bg-red-50 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-100"
+                            >
+                                Remove
+                            </a>
+                        </div>
                     </div>
                 ))}
             </div>
