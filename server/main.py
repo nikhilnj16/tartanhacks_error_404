@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from routes import transactions, analysis
 
 app = FastAPI(
     title="TartanHacks Error 404 API",
@@ -12,6 +13,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(transactions.router)
+app.include_router(analysis.router)
 
 
 @app.get("/")

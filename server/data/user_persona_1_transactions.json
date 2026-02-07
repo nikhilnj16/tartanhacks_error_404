@@ -116,7 +116,7 @@
       "date": "2024-12-03",
       "time": "19:28:14",
       "transaction_id": "TXN015",
-      "amount": +25.00,
+      "amount": 25.00,
       "place": "Venmo from Sarah - Dinner split",
       "category": "Income"
     },
@@ -148,7 +148,7 @@
       "date": "2024-12-05",
       "time": "02:17:33",
       "transaction_id": "TXN019",
-      "amount": +387.50,
+      "amount": 387.50,
       "place": "Campus Library - Paycheck (22 hrs)",
       "category": "Income"
     },
@@ -308,7 +308,7 @@
       "date": "2024-12-10",
       "time": "20:47:15",
       "transaction_id": "TXN039",
-      "amount": +17.50,
+      "amount": 17.50,
       "place": "Venmo from Jessica - Dinner split",
       "category": "Income"
     },
@@ -524,7 +524,7 @@
       "date": "2024-12-19",
       "time": "01:43:28",
       "transaction_id": "TXN066",
-      "amount": +455.00,
+      "amount": 455.00,
       "place": "Campus Library - Paycheck (26 hrs)",
       "category": "Income"
     },
@@ -652,7 +652,7 @@
       "date": "2024-12-23",
       "time": "20:33:14",
       "transaction_id": "TXN082",
-      "amount": +30.00,
+      "amount": 30.00,
       "place": "Venmo from Alex - Dinner split",
       "category": "Income"
     },
@@ -692,7 +692,7 @@
       "date": "2024-12-25",
       "time": "19:15:42",
       "transaction_id": "TXN087",
-      "amount": +150.00,
+      "amount": 150.00,
       "place": "Holiday Gift Money - Grandma",
       "category": "Income"
     },
@@ -900,7 +900,7 @@
       "date": "2025-01-02",
       "time": "02:51:17",
       "transaction_id": "TXN113",
-      "amount": +368.25,
+      "amount": 368.25,
       "place": "Campus Library - Paycheck (21 hrs)",
       "category": "Income"
     },
@@ -1124,7 +1124,7 @@
       "date": "2025-01-10",
       "time": "21:45:16",
       "transaction_id": "TXN141",
-      "amount": +20.00,
+      "amount": 20.00,
       "place": "Zelle from Chris - Movie tickets",
       "category": "Income"
     },
@@ -1260,7 +1260,7 @@
       "date": "2025-01-16",
       "time": "03:24:47",
       "transaction_id": "TXN158",
-      "amount": +490.00,
+      "amount": 490.00,
       "place": "Campus Library - Paycheck (28 hrs)",
       "category": "Income"
     },
@@ -1620,7 +1620,7 @@
       "date": "2025-01-30",
       "time": "02:39:54",
       "transaction_id": "TXN203",
-      "amount": +403.25,
+      "amount": 403.25,
       "place": "Campus Library - Paycheck (23 hrs)",
       "category": "Income"
     },
@@ -1652,7 +1652,7 @@
       "date": "2025-01-30",
       "time": "20:28:37",
       "transaction_id": "TXN207",
-      "amount": +28.00,
+      "amount": 28.00,
       "place": "Venmo from Ryan - Dinner split",
       "category": "Income"
     },
@@ -2380,7 +2380,7 @@
       "date": "2025-01-13",
       "time": "03:17:42",
       "transaction_id": "TXN298",
-      "amount": +437.50,
+      "amount": 437.50,
       "place": "Campus Library - Paycheck (25 hrs)",
       "category": "Income"
     },
@@ -2388,7 +2388,7 @@
       "date": "2025-01-27",
       "time": "02:48:29",
       "transaction_id": "TXN299",
-      "amount": +350.00,
+      "amount": 350.00,
       "place": "Campus Library - Paycheck (20 hrs)",
       "category": "Income"
     },
