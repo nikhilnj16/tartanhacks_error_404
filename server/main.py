@@ -11,7 +11,7 @@ from routes import transactions, analysis, auth
 async def lifespan(app: FastAPI):
     init_db()
     yield
-, target, reflection
+    target, reflection
 
 app = FastAPI(
     title="TartanHacks Error 404 API",
