@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import BudgetManagerTab from "./BudgetManagerTab";
 import SubscriptionManagerTab from "./SubscriptionManagerTab";
 import UserSettingsTab from "./UserSettingsTab";
+import { getBudget, getBudgetPlan, getStoredUserEmail } from "../api/budget";
 
 import {
     PieChart,
@@ -200,6 +201,26 @@ interface SpendingTabProps {
 }
 
 function SpendingTab({ spendingData, weeklyData, totalMonthlySpend }: SpendingTabProps) {
+    const [savings, setSavings] = useState<number | null>(null);
+    const [savingsGoal, setSavingsGoal] = useState("");
+    const [savingsReason, setSavingsReason] = useState("");
+    const [savingsLoading, setSavingsLoading] = useState(true);
+
+    useEffect(() => {
+        const email = getStoredUserEmail();
+        if (!email) {
+            setSavingsLoading(false);
+            return;
+        }
+        Promise.all([getBudget(email), getBudgetPlan(email)])
+            .then(([b, p]) => {
+                setSavings(b.savings);
+                setSavingsGoal(p.savings_goal ?? "");
+                setSavingsReason(p.savings_reason ?? "");
+            })
+            .catch(() => setSavings(null))
+            .finally(() => setSavingsLoading(false));
+    }, []);
 
     // Calculate biggest spend category for the insight card
     const biggestSpend = spendingData.length > 0
@@ -216,15 +237,26 @@ function SpendingTab({ spendingData, weeklyData, totalMonthlySpend }: SpendingTa
                 </div>
 
                 <div className="bg-emerald-50 border border-emerald-300 rounded-xl p-6">
-                    <h3 className="font-semibold mb-2">🎯 Savings Goal</h3>
-                    <p className="text-lg font-bold">MacBook Pro</p>
-                    <p className="text-sm text-slate-600">$1,850 / $2,500</p>
-                    <div className="w-full h-3 bg-white rounded-full mt-3 overflow-hidden">
-                        <div className="h-full bg-emerald-500 w-[74%]" />
-                    </div>
-                    <p className="text-sm text-slate-600 mt-2">
-                        Target: Dec 15, 2026
-                    </p>
+                    <h3 className="font-semibold mb-2">🎯 Savings</h3>
+                    {savingsLoading ? (
+                        <p className="text-slate-500">Loading…</p>
+                    ) : (
+                        <>
+                            <p className="text-2xl font-bold text-emerald-700">
+                                ${savings !== null ? savings.toFixed(2) : "0.00"}
+                            </p>
+                            <p className="text-sm text-slate-600 mt-1">Same as on the Budget Planner.</p>
+                            {savingsGoal && (
+                                <p className="text-lg font-semibold mt-3">Goal: {savingsGoal}</p>
+                            )}
+                            {savingsReason && (
+                                <p className="text-sm text-slate-600 mt-1">Reason: {savingsReason}</p>
+                            )}
+                            {!savingsGoal && !savingsReason && (
+                                <p className="text-sm text-slate-500 mt-2">Set your savings goal and reason on the Budget Planner tab.</p>
+                            )}
+                        </>
+                    )}
                 </div>
             </section>
 
