@@ -3,6 +3,7 @@ type Tab =
     | "predictive"
     | "budget"
     | "subscriptions"
+    | "carbon"
     | "settings";
 
 type SidebarProps = {
@@ -17,6 +18,7 @@ const navItems: { label: string; tab: Tab }[] = [
     { label: "Predictive Analysis", tab: "predictive" },
     { label: "Budget Manager", tab: "budget" },
     { label: "Subscription Manager", tab: "subscriptions" },
+    { label: "Carbon Emissions", tab: "carbon" },
     { label: "User Settings", tab: "settings" },
 ];
 
