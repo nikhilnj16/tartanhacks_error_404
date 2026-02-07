@@ -2,7 +2,7 @@ import certifi
 from fastapi import FastAPI
 from firebase_admin import firestore
 from dotenv import load_dotenv
-from ..database import init_db
+from server.database import init_db
 import os
 import json
 from pathlib import Path
