@@ -10,7 +10,7 @@ load_dotenv()
 
 init_db()
 
-file_path = Path(__file__).parent.parent / "data" / "user_2.json"
+file_path = Path(__file__).parent.parent / "data" / "user_persona_1_transactions.json"
 
 with open(file_path, "r") as f:
     data = json.load(f)
@@ -21,7 +21,6 @@ def return_email():
     email = ""
     for user in users:
         email = user.to_dict()['email']
-        break
     return email
 
 def add_data(email):

@@ -19,11 +19,10 @@ def return_email():
     email = ""
     for user in users:
         email = user.to_dict()['email']
-        break
     return email
 
 @router.get("/transactions")
 def get_transactions():
     db = firestore.client()
     transactions = db.collection("transactions").document(return_email()).get()
-    return transactions.to_dict()["transactions"][:5]
+    return transactions.to_dict()["transactions"]
