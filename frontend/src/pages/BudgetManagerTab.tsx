@@ -7,6 +7,7 @@ import {
     type BudgetResponse,
     type BudgetPlanResponse,
 } from "../api/budget";
+import Loader from "../components/Loader";
 
 const CATEGORY_COLORS: Record<string, string> = {
     "Dining Out": "bg-red-500",
@@ -100,13 +101,13 @@ export default function BudgetManagerTab() {
         setInputLimits(initial);
     }, [budget, plan]);
 
+    // ... (rest of imports)
+
     if (loading) {
         return (
             <div className="space-y-8">
                 <h2 className="text-2xl font-bold">Monthly Budget Tracker</h2>
-                <div className="flex items-center justify-center py-12 text-slate-500">
-                    Loading budget…
-                </div>
+                <Loader className="py-12" />
             </div>
         );
     }

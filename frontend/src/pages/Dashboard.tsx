@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { LogOut } from "lucide-react";
 import axios from "axios";
 import Sidebar from "./Sidebar";
 import BudgetManagerTab from "./BudgetManagerTab";
 import SubscriptionManagerTab from "./SubscriptionManagerTab";
 import CarbonEmissionsTab from "./CarbonEmissionsTab";
 import UserSettingsTab from "./UserSettingsTab";
+
 import MoneyRain from "../components/MoneyRain";
+import Loader from "../components/Loader";
 import { getBudget, getBudgetPlan, getStoredUserEmail } from "../api/budget";
 import logo from "../assets/logo.png";
 
@@ -47,96 +51,80 @@ interface WeeklyItem {
 /* -------------------- Component -------------------- */
 
 export default function Dashboard() {
+    const navigate = useNavigate();
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [activeTab, setActiveTab] = useState<Tab>("spending");
 
     // State for Data
+    const [loading, setLoading] = useState(true);
     const [spendingData, setSpendingData] = useState<SpendingItem[]>([]);
     const [weeklyData, setWeeklyData] = useState<WeeklyItem[]>([]);
     const [totalMonthlySpend, setTotalMonthlySpend] = useState<number>(0);
+    const [savings, setSavings] = useState<number>(0);
+    const [savingsGoal, setSavingsGoal] = useState("");
+    const [savingsReason, setSavingsReason] = useState("");
 
-    // ---------------------------------------------------------
-    // EFFECT 1: For Graph 2 (Bar Chart - Weekly/Daily Pattern)
-    // ---------------------------------------------------------
     useEffect(() => {
         const email = getStoredUserEmail();
-        if (!email) return;
+        if (!email) {
+            setLoading(false);
+            return;
+        }
 
-        axios.get(`http://localhost:8000/transactions?user_email=${email}`)
-            .then((response) => {
-                const transactions = response.data;
+        const fetchTransactions = axios.get(`http://localhost:8000/transactions?user_email=${email}`);
+        const fetchAnalysis = axios.get(`http://localhost:8000/analysis?user_email=${email}`);
+        const fetchBudget = getBudget(email);
+        const fetchPlan = getBudgetPlan(email);
 
-                if (!transactions || transactions.length === 0) return;
+        Promise.all([fetchTransactions, fetchAnalysis, fetchBudget, fetchPlan])
+            .then(([transRes, analysisRes, budgetRes, planRes]) => {
+                // 1. Transactions (Graph 2)
+                const transactions = transRes.data;
+                if (transactions && transactions.length > 0) {
+                    const lastTransaction = transactions[transactions.length - 1];
+                    const endDate = new Date(lastTransaction.date);
+                    endDate.setHours(23, 59, 59, 999);
+                    const startDate = new Date(endDate);
+                    startDate.setDate(endDate.getDate() - 6);
+                    startDate.setHours(0, 0, 0, 0);
 
-                // 1. Find the End Date (Most recent transaction)
-                const lastTransaction = transactions[transactions.length - 1];
-                const endDate = new Date(lastTransaction.date);
-                endDate.setHours(23, 59, 59, 999);
+                    const last7DaysMap: { [key: string]: number } = {};
+                    for (let i = 0; i < 7; i++) {
+                        const d = new Date(startDate);
+                        d.setDate(startDate.getDate() + i);
+                        const dateKey = d.toISOString().split('T')[0];
+                        last7DaysMap[dateKey] = 0;
+                    }
 
-                // 2. Calculate Start Date (6 days ago, to make a full 7-day window)
-                const startDate = new Date(endDate);
-                startDate.setDate(endDate.getDate() - 6);
-                startDate.setHours(0, 0, 0, 0);
-
-                // 3. Initialize map for the last 7 days with 0s
-                const last7DaysMap: { [key: string]: number } = {};
-                for (let i = 0; i < 7; i++) {
-                    const d = new Date(startDate);
-                    d.setDate(startDate.getDate() + i);
-                    const dateKey = d.toISOString().split('T')[0];
-                    last7DaysMap[dateKey] = 0;
-                }
-
-                // 4. Fill with Transaction Data
-                transactions.forEach((t: any) => {
-                    const tDate = new Date(t.date);
-                    // Filter: Must be within our 7-day window
-                    if (tDate >= startDate && tDate <= endDate) {
-                        if (t.amount < 0) {
-                            const absAmount = Math.abs(t.amount);
-                            const dateKey = t.date; // Ensure this matches YYYY-MM-DD
-
-                            if (last7DaysMap[dateKey] !== undefined) {
-                                last7DaysMap[dateKey] += absAmount;
+                    transactions.forEach((t: any) => {
+                        const tDate = new Date(t.date);
+                        if (tDate >= startDate && tDate <= endDate) {
+                            if (t.amount < 0) {
+                                const absAmount = Math.abs(t.amount);
+                                const dateKey = t.date;
+                                if (last7DaysMap[dateKey] !== undefined) {
+                                    last7DaysMap[dateKey] += absAmount;
+                                }
                             }
                         }
-                    }
-                });
+                    });
 
-                // 5. Format for Recharts
-                const formattedChartData = Object.keys(last7DaysMap).sort().map(dateKey => {
-                    const d = new Date(dateKey);
-                    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-                    return {
-                        name: daysOfWeek[d.getDay()], // Using 'name' for XAxis
-                        amount: parseFloat(last7DaysMap[dateKey].toFixed(2))
-                    };
-                });
+                    const formattedChartData = Object.keys(last7DaysMap).sort().map(dateKey => {
+                        const d = new Date(dateKey);
+                        const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+                        return {
+                            name: daysOfWeek[d.getDay()],
+                            amount: parseFloat(last7DaysMap[dateKey].toFixed(2))
+                        };
+                    });
+                    setWeeklyData(formattedChartData);
+                }
 
-                setWeeklyData(formattedChartData);
-            })
-            .catch((error) => {
-                console.error("Error fetching transactions for Graph 2:", error);
-            });
-    }, []);
-
-    // ---------------------------------------------------------
-    // EFFECT 2: For Graph 1 (Pie Chart) & Total Monthly Spend
-    // ---------------------------------------------------------
-    useEffect(() => {
-        const email = getStoredUserEmail();
-        if (!email) return;
-
-        axios.get(`http://localhost:8000/analysis?user_email=${email}`)
-            .then((response) => {
-                const { spending, monthly_expenditure } = response.data;
-
-                // 1. Set Total Spend
+                // 2. Analysis (Graph 1)
+                const { spending, monthly_expenditure } = analysisRes.data;
                 if (monthly_expenditure !== undefined) {
                     setTotalMonthlySpend(monthly_expenditure);
                 }
-
-                // 2. Set Pie Chart Data (Spending by Category)
                 if (spending) {
                     const formattedPieData = Object.keys(spending).map((key, index) => ({
                         name: key,
@@ -146,23 +134,24 @@ export default function Dashboard() {
                     setSpendingData(formattedPieData);
                 }
 
-                // NOTE: We deliberately DO NOT set weeklyData here anymore.
+                // 3. Savings (MoneyRain & SpendingTab)
+                setSavings(budgetRes.savings);
+
+                // 4. Budget Plan (SpendingTab)
+                setSavingsGoal(planRes.savings_goal ?? "");
+                setSavingsReason(planRes.savings_reason ?? "");
             })
             .catch((error) => {
-                console.error("Error fetching analysis for Graph 1:", error);
+                console.error("Error fetching dashboard data:", error);
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }, []);
 
-    // ---------------------------------------------------------
-    // EFFECT 3: Fetch Savings for Money Rain
-    // ---------------------------------------------------------
-    const [savings, setSavings] = useState<number>(0);
-    useEffect(() => {
-        const email = getStoredUserEmail();
-        if (email) {
-            getBudget(email).then(b => setSavings(b.savings)).catch(() => { });
-        }
-    }, []);
+    if (loading) {
+        return <Loader fullScreen />;
+    }
 
     return (
         <div className="h-screen w-full flex overflow-hidden bg-[#D1E8E2]">
@@ -196,6 +185,18 @@ export default function Dashboard() {
                             alt="BudgetBruh"
                             className="absolute left-1/2 -translate-x-1/2 h-8 md:hidden"
                         />
+
+                        <button
+                            onClick={() => {
+                                localStorage.removeItem("auth_user");
+                                navigate("/");
+                            }}
+                            className="ml-auto flex items-center gap-2 text-slate-600 hover:text-red-600 transition-colors font-medium z-10"
+                            title="Log Out"
+                        >
+                            <span className="hidden md:inline">Log Out</span>
+                            <LogOut className="w-5 h-5" />
+                        </button>
                     </div>
                 </header>
 
@@ -206,6 +207,9 @@ export default function Dashboard() {
                             spendingData={spendingData}
                             weeklyData={weeklyData}
                             totalMonthlySpend={totalMonthlySpend}
+                            savings={savings}
+                            savingsGoal={savingsGoal}
+                            savingsReason={savingsReason}
                         />
                     )}
                     {activeTab === "predictive" && <PredictiveTab />}
@@ -225,29 +229,19 @@ interface SpendingTabProps {
     spendingData: SpendingItem[];
     weeklyData: WeeklyItem[];
     totalMonthlySpend: number;
+    savings: number;
+    savingsGoal: string;
+    savingsReason: string;
 }
 
-function SpendingTab({ spendingData, weeklyData, totalMonthlySpend }: SpendingTabProps) {
-    const [savings, setSavings] = useState<number | null>(null);
-    const [savingsGoal, setSavingsGoal] = useState("");
-    const [savingsReason, setSavingsReason] = useState("");
-    const [savingsLoading, setSavingsLoading] = useState(true);
-
-    useEffect(() => {
-        const email = getStoredUserEmail();
-        if (!email) {
-            setSavingsLoading(false);
-            return;
-        }
-        Promise.all([getBudget(email), getBudgetPlan(email)])
-            .then(([b, p]) => {
-                setSavings(b.savings);
-                setSavingsGoal(p.savings_goal ?? "");
-                setSavingsReason(p.savings_reason ?? "");
-            })
-            .catch(() => setSavings(null))
-            .finally(() => setSavingsLoading(false));
-    }, []);
+function SpendingTab({
+    spendingData,
+    weeklyData,
+    totalMonthlySpend,
+    savings,
+    savingsGoal,
+    savingsReason
+}: SpendingTabProps) {
 
     // Calculate biggest spend category for the insight card
     const biggestSpend = spendingData.length > 0
@@ -265,23 +259,17 @@ function SpendingTab({ spendingData, weeklyData, totalMonthlySpend }: SpendingTa
 
                 <div className="bg-emerald-50 border border-emerald-300 rounded-xl p-6">
                     <h3 className="font-semibold mb-2">🎯 Savings</h3>
-                    {savingsLoading ? (
-                        <p className="text-slate-500">Loading…</p>
-                    ) : (
-                        <>
-                            <p className="text-2xl font-bold text-emerald-700">
-                                ${savings !== null ? savings.toFixed(2) : "0.00"}
-                            </p>
-                            {savingsGoal && (
-                                <p className="text-lg font-semibold mt-3">Goal: ${savingsGoal}</p>
-                            )}
-                            {savingsReason && (
-                                <p className="text-sm text-slate-600 mt-1">Reason: {savingsReason}</p>
-                            )}
-                            {!savingsGoal && !savingsReason && (
-                                <p className="text-sm text-slate-500 mt-2">Set your savings goal and reason on the Budget Planner tab.</p>
-                            )}
-                        </>
+                    <p className="text-2xl font-bold text-emerald-700">
+                        ${savings.toFixed(2)}
+                    </p>
+                    {savingsGoal && (
+                        <p className="text-lg font-semibold mt-3">Goal: ${savingsGoal}</p>
+                    )}
+                    {savingsReason && (
+                        <p className="text-sm text-slate-600 mt-1">Reason: {savingsReason}</p>
+                    )}
+                    {!savingsGoal && !savingsReason && (
+                        <p className="text-sm text-slate-500 mt-2">Set your savings goal and reason on the Budget Planner tab.</p>
                     )}
                 </div>
             </section>
