@@ -10,13 +10,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
-<<<<<<< HEAD
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.563.0",
-=======
     "axios": "^1.13.4",
->>>>>>> f29ac15c8d486073381eb9354b93f214e67a2422
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.0",
