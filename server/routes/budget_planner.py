@@ -1,70 +1,119 @@
-from fastapi import APIRouter
-from firebase_admin import firestore
-from dotenv import load_dotenv
-from database import init_db
+from fastapi import APIRouter, Body, Depends, Query
+from google.cloud.firestore import Client as FirestoreClient
 from collections import defaultdict
 
-load_dotenv()
-
-init_db()
-
-def return_email():
-    db = firestore.client()
-    users = db.collection("users").get()
-    email = ""
-    docID = ""
-    for user in users:
-        email = user.to_dict()['email']
-        docID = user.id
-        break
-    return email , docID
+from database import get_db
 
 router = APIRouter()
 
+
+def _get_user_doc_id(db: FirestoreClient, user_email: str) -> str | None:
+    """Return the Firestore document ID for the user with this email, or None."""
+    user_email = user_email.strip().lower()
+    query = db.collection("users").where("email", "==", user_email).limit(1)
+    docs = list(query.stream())
+    if not docs:
+        return None
+    return docs[0].id
+
+
 @router.get("/generate_budget")
-def generate_budget():
-    db = firestore.client()
-    user_email , docID = return_email()
+def generate_budget(
+    user_email: str = Query(..., description="User email to generate budget for"),
+    db: FirestoreClient = Depends(get_db),
+):
+    """Get or compute budget (income, expenses, savings, categories) for the user. No auth header."""
+    user_doc_id = _get_user_doc_id(db, user_email)
+    if not user_doc_id:
+        return {"income": 0, "expenses": 0, "savings": 0, "categories": {}}
 
-    users = db.collection("users").get()
-    
-    for user in users:
-        if user.to_dict()['email'] == user_email:
-            if user.to_dict().get("budget"):
-                return user.to_dict()["budget"]
+    user_ref = db.collection("users").document(user_doc_id)
+    user_doc = user_ref.get()
+    if not user_doc.exists:
+        return {"income": 0, "expenses": 0, "savings": 0, "categories": {}}
+
+    user_data = user_doc.to_dict()
+    if user_data.get("budget"):
+        return user_data["budget"]
+
+    tx_ref = db.collection("transactions").document(user_email.strip().lower())
+    tx_doc = tx_ref.get()
+    if not tx_doc.exists:
+        budget = {"income": 0, "expenses": 0, "savings": 0, "categories": {}}
+        user_ref.update({"budget": budget})
+        return budget
+
+    transactions = tx_doc.to_dict().get("transactions") or []
+    income = 0.0
+    expenses = 0.0
+    categories = defaultdict(float)
+    for t in transactions:
+        amount = t.get("amount") or 0
+        if isinstance(amount, (int, float)):
+            if amount < 0:
+                expenses += amount
+                cat = t.get("category") or "Other"
+                categories[cat] += amount
             else:
+                income += amount
+    savings = income + expenses  # expenses are negative
+    categories = {k: round(v, 2) for k, v in categories.items()}
+    income = round(income, 2)
+    expenses = round(expenses, 2)
+    savings = round(savings, 2)
 
-                transactions = db.collection("transactions").document(user_email).get()
-                transactions = transactions.to_dict()["transactions"]
-                savings = 0
-                income = 0
-                expenses = 0
-                categories = defaultdict(float)
-                for transaction in transactions:
-                    if transaction["amount"] < 0:
-                        expenses += transaction["amount"]
-                        categories[transaction["category"]] += transaction["amount"]
-                    else:
-                        income += transaction["amount"]
-                savings = income - expenses
-                categories = {k: round(v, 2) for k, v in categories.items()}
-                income = round(income, 2)
-                expenses = round(expenses, 2)
-                savings = round(savings, 2)
+    budget = {
+        "income": income,
+        "expenses": expenses,
+        "savings": savings,
+        "categories": categories,
+    }
+    user_ref.update({"budget": budget})
+    return budget
 
-                budget = {
-                    "income": income,
-                    "expenses": expenses,
-                    "savings": savings,
-                    "categories": categories
-                }
 
-                db.collection("users").document(docID).update({"budget": budget})
-                return budget
+@router.get("/budget_plan")
+def get_budget_plan(
+    user_email: str = Query(..., description="User email"),
+    db: FirestoreClient = Depends(get_db),
+):
+    """Get the user's budget plan (category limits) and savings goal/reason."""
+    user_doc_id = _get_user_doc_id(db, user_email)
+    if not user_doc_id:
+        return {"plan": {}, "savings_goal": "", "savings_reason": ""}
+    user_doc = db.collection("users").document(user_doc_id).get()
+    if not user_doc.exists:
+        return {"plan": {}, "savings_goal": "", "savings_reason": ""}
+    data = user_doc.to_dict() or {}
+    return {
+        "plan": data.get("budget_plan") or {},
+        "savings_goal": data.get("savings_goal") or "",
+        "savings_reason": data.get("savings_reason") or "",
+    }
+
 
 @router.post("/update_budget")
-def update_budget(budget: dict):
-    db = firestore.client()
-    user_email , docID = return_email()
-    db.collection("users").document(docID).update({"budget": budget})
-    return {"message": "Budget updated successfully"}
+def update_budget(
+    user_email: str = Query(..., description="User email to update budget plan for"),
+    body: dict = Body(..., description="Budget plan (category limits) and optional savings_goal, savings_reason"),
+    db: FirestoreClient = Depends(get_db),
+):
+    """Update the user's budget plan and optional savings goal/reason."""
+    user_doc_id = _get_user_doc_id(db, user_email)
+    if not user_doc_id:
+        return {"message": "User not found", "ok": False}
+
+    user_ref = db.collection("users").document(user_doc_id)
+
+    # Category limits only (numeric)
+    plan = {
+        k: float(v)
+        for k, v in body.items()
+        if k not in ("savings_goal", "savings_reason") and isinstance(v, (int, float)) and v >= 0
+    }
+    savings_goal = str(body.get("savings_goal") or "").strip()
+    savings_reason = str(body.get("savings_reason") or "").strip()
+
+    update_data = {"budget_plan": plan, "savings_goal": savings_goal, "savings_reason": savings_reason}
+    user_ref.update(update_data)
+    return {"message": "Budget plan updated successfully", "ok": True}
