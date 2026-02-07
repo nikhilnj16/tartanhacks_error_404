@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_db
-from routes import transactions, analysis, auth, target, reflection, budget_planner
+from routes import transactions, analysis, auth, target, reflection, budget_planner, carbon
 
 
 @asynccontextmanager
@@ -29,6 +29,7 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(transactions.router)
 app.include_router(analysis.router)
+app.include_router(carbon.router)
 app.include_router(target.router)
 app.include_router(reflection.router)
 app.include_router(budget_planner.router)

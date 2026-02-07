@@ -1,6 +1,3 @@
-from fastapi import APIRouter
-import json
-from pathlib import Path
 from collections import defaultdict
 from firebase_admin import firestore
 from database import init_db
@@ -9,6 +6,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 init_db()
+
+from fastapi import APIRouter, Depends, Query
+
+from database import get_db
+from transaction_repo import get_transactions_for_user
+from google.cloud.firestore import Client as FirestoreClient
 
 router = APIRouter()
 
