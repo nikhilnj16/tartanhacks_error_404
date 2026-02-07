@@ -1,2404 +1,1433 @@
 {
   "transactions": [
     {
-      "date": "2024-12-01",
-      "time": "08:02:17",
+      "date": "2024-11-07",
+      "time": "16:10:35",
       "transaction_id": "TXN001",
-      "amount": -850.00,
-      "place": "Campus Housing - Rent",
-      "category": "Rent"
+      "amount": -34.67,
+      "place": "Target - Personal Care",
+      "category": "Personal"
     },
     {
-      "date": "2024-12-01",
-      "time": "08:03:42",
+      "date": "2024-11-07",
+      "time": "9:15:53",
       "transaction_id": "TXN002",
-      "amount": -45.00,
-      "place": "Electric Company Auto-Pay",
-      "category": "Utilities"
+      "amount": -7.4,
+      "place": "Starbucks",
+      "category": "Food"
     },
     {
-      "date": "2024-12-01",
-      "time": "08:04:28",
+      "date": "2024-11-08",
+      "time": "02:15:33",
       "transaction_id": "TXN003",
-      "amount": -35.00,
-      "place": "Xfinity Internet Auto-Pay",
-      "category": "Utilities"
+      "amount": 665.0,
+      "place": "Campus Library - Paycheck (38 hrs)",
+      "category": "Income & Transfers"
     },
     {
-      "date": "2024-12-01",
-      "time": "08:05:15",
+      "date": "2024-11-08",
+      "time": "14:31:21",
       "transaction_id": "TXN004",
-      "amount": -30.00,
-      "place": "Water & Sewage Auto-Pay",
-      "category": "Utilities"
+      "amount": -6.21,
+      "place": "Starbucks",
+      "category": "Food"
     },
     {
-      "date": "2024-12-01",
-      "time": "09:47:33",
+      "date": "2024-11-09",
+      "time": "13:33:04",
       "transaction_id": "TXN005",
-      "amount": -15.99,
-      "place": "Netflix Subscription",
-      "category": "Subscriptions"
+      "amount": -50.38,
+      "place": "Amazon - Electronics",
+      "category": "Shopping"
     },
     {
-      "date": "2024-12-01",
-      "time": "10:22:56",
+      "date": "2024-11-09",
+      "time": "14:39:45",
       "transaction_id": "TXN006",
-      "amount": -125.00,
-      "place": "State Farm Car Insurance",
-      "category": "Insurance"
+      "amount": -35.0,
+      "place": "Haircut - Great Clips",
+      "category": "Personal"
     },
     {
-      "date": "2024-12-01",
-      "time": "14:38:21",
+      "date": "2024-11-09",
+      "time": "16:09:41",
       "transaction_id": "TXN007",
-      "amount": -42.67,
-      "place": "Walmart",
-      "category": "Groceries"
+      "amount": -38.08,
+      "place": "Target - Clothes",
+      "category": "Shopping"
+    },
+    {
+      "date": "2024-11-09",
+      "time": "18:34:49",
+      "transaction_id": "TXN008",
+      "amount": -28.36,
+      "place": "BP Gas Station",
+      "category": "Transport"
+    },
+    {
+      "date": "2024-11-10",
+      "time": "16:53:52",
+      "transaction_id": "TXN009",
+      "amount": -44.24,
+      "place": "Walmart - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-10",
+      "time": "19:53:12",
+      "transaction_id": "TXN010",
+      "amount": -21.67,
+      "place": "Bowling Alley",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2024-11-11",
+      "time": "7:29:14",
+      "transaction_id": "TXN011",
+      "amount": -6.17,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-12",
+      "time": "14:46:39",
+      "transaction_id": "TXN012",
+      "amount": -6.03,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-13",
+      "time": "15:20:53",
+      "transaction_id": "TXN013",
+      "amount": -6.79,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-13",
+      "time": "15:28:52",
+      "transaction_id": "TXN014",
+      "amount": -12.87,
+      "place": "Chipotle",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-14",
+      "time": "8:06:18",
+      "transaction_id": "TXN015",
+      "amount": -6.02,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-15",
+      "time": "09:12:49",
+      "transaction_id": "TXN016",
+      "amount": -14.99,
+      "place": "Hulu",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2024-11-16",
+      "time": "10:01:38",
+      "transaction_id": "TXN017",
+      "amount": -75,
+      "place": "BlueCross Health Insurance",
+      "category": "Health"
+    },
+    {
+      "date": "2024-11-16",
+      "time": "14:57:32",
+      "transaction_id": "TXN018",
+      "amount": -11.24,
+      "place": "Panda Express",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-16",
+      "time": "18:44:08",
+      "transaction_id": "TXN019",
+      "amount": -31.37,
+      "place": "Shell Gas Station",
+      "category": "Transport"
+    },
+    {
+      "date": "2024-11-17",
+      "time": "13:12:53",
+      "transaction_id": "TXN020",
+      "amount": -48.09,
+      "place": "Walmart - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-17",
+      "time": "18:11:45",
+      "transaction_id": "TXN021",
+      "amount": -18.13,
+      "place": "Buffalo Wild Wings",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-17",
+      "time": "19:42:59",
+      "transaction_id": "TXN022",
+      "amount": -21.14,
+      "place": "Bowling Alley",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2024-11-18",
+      "time": "10:30:19",
+      "transaction_id": "TXN023",
+      "amount": -6.46,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-19",
+      "time": "9:55:41",
+      "transaction_id": "TXN024",
+      "amount": -6.78,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-20",
+      "time": "7:27:14",
+      "transaction_id": "TXN025",
+      "amount": -5.71,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-21",
+      "time": "14:48:44",
+      "transaction_id": "TXN026",
+      "amount": -5.57,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-22",
+      "time": "02:15:33",
+      "transaction_id": "TXN027",
+      "amount": 840.0,
+      "place": "Campus Library - Paycheck (48 hrs)",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2024-11-23",
+      "time": "17:52:09",
+      "transaction_id": "TXN028",
+      "amount": -30.32,
+      "place": "Shell Gas Station",
+      "category": "Transport"
+    },
+    {
+      "date": "2024-11-23",
+      "time": "19:29:33",
+      "transaction_id": "TXN029",
+      "amount": -12.71,
+      "place": "Five Guys",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-24",
+      "time": "11:24:23",
+      "transaction_id": "TXN030",
+      "amount": -50.95,
+      "place": "Target - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-24",
+      "time": "19:26:05",
+      "transaction_id": "TXN031",
+      "amount": -23.99,
+      "place": "Movie Theater",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2024-11-24",
+      "time": "19:26:17",
+      "transaction_id": "TXN032",
+      "amount": -9.8,
+      "place": "Chick-fil-A",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-25",
+      "time": "13:04:46",
+      "transaction_id": "TXN033",
+      "amount": -12.12,
+      "place": "Panera Bread",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-25",
+      "time": "15:25:47",
+      "transaction_id": "TXN034",
+      "amount": -6.89,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-26",
+      "time": "15:53:30",
+      "transaction_id": "TXN035",
+      "amount": -7.29,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-27",
+      "time": "9:38:43",
+      "transaction_id": "TXN036",
+      "amount": -5.97,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-28",
+      "time": "10:30:38",
+      "transaction_id": "TXN037",
+      "amount": -5.99,
+      "place": "Campus Coffee Shop",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-30",
+      "time": "14:29:13",
+      "transaction_id": "TXN038",
+      "amount": -15.74,
+      "place": "Panera Bread",
+      "category": "Food"
+    },
+    {
+      "date": "2024-11-30",
+      "time": "15:05:03",
+      "transaction_id": "TXN039",
+      "amount": 7.87,
+      "place": "Venmo from Sarah - Dinner split",
+      "category": "Income & Transfers"
     },
     {
       "date": "2024-12-01",
-      "time": "16:51:09",
-      "transaction_id": "TXN008",
-      "amount": -5.99,
-      "place": "Spotify Premium",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2024-12-02",
-      "time": "07:42:18",
-      "transaction_id": "TXN009",
-      "amount": -6.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-02",
-      "time": "12:27:43",
-      "transaction_id": "TXN010",
-      "amount": -12.45,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-02",
-      "time": "18:14:56",
-      "transaction_id": "TXN011",
-      "amount": -52.30,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-03",
-      "time": "08:19:37",
-      "transaction_id": "TXN012",
-      "amount": -4.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-03",
-      "time": "13:45:22",
-      "transaction_id": "TXN013",
-      "amount": -11.25,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-03",
-      "time": "17:33:48",
-      "transaction_id": "TXN014",
-      "amount": -32.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-03",
-      "time": "19:28:14",
-      "transaction_id": "TXN015",
-      "amount": 25.00,
-      "place": "Venmo from Sarah - Dinner split",
-      "category": "Income"
-    },
-    {
-      "date": "2024-12-04",
-      "time": "09:56:31",
-      "transaction_id": "TXN016",
-      "amount": -5.25,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-04",
-      "time": "12:41:07",
-      "transaction_id": "TXN017",
-      "amount": -9.99,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-04",
-      "time": "19:12:55",
-      "transaction_id": "TXN018",
-      "amount": -18.75,
-      "place": "Pizza Hut",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-05",
-      "time": "02:17:33",
-      "transaction_id": "TXN019",
-      "amount": 387.50,
-      "place": "Campus Library - Paycheck (22 hrs)",
-      "category": "Income"
-    },
-    {
-      "date": "2024-12-05",
-      "time": "08:34:19",
-      "transaction_id": "TXN020",
-      "amount": -9.99,
-      "place": "Amazon Prime",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2024-12-05",
-      "time": "11:03:42",
-      "transaction_id": "TXN021",
-      "amount": -65.40,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-05",
-      "time": "13:51:28",
-      "transaction_id": "TXN022",
-      "amount": -13.50,
-      "place": "Panera Bread",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-06",
-      "time": "07:28:15",
-      "transaction_id": "TXN023",
-      "amount": -5.75,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-06",
-      "time": "12:36:49",
-      "transaction_id": "TXN024",
-      "amount": -10.50,
-      "place": "Chick-fil-A",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-06",
-      "time": "18:22:33",
-      "transaction_id": "TXN025",
-      "amount": -48.90,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-07",
-      "time": "09:14:57",
-      "transaction_id": "TXN026",
-      "amount": -4.25,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-07",
-      "time": "14:47:21",
-      "transaction_id": "TXN027",
-      "amount": -22.50,
-      "place": "Movie Theater",
-      "category": "Leisure"
-    },
-    {
-      "date": "2024-12-07",
-      "time": "19:08:44",
-      "transaction_id": "TXN028",
-      "amount": -15.99,
-      "place": "Buffalo Wild Wings",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-07",
-      "time": "21:33:12",
-      "transaction_id": "TXN029",
-      "amount": -15.00,
-      "place": "Zelle to Mike - Movie tickets",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-08",
-      "time": "08:45:39",
-      "transaction_id": "TXN030",
-      "amount": -6.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-08",
-      "time": "12:19:27",
-      "transaction_id": "TXN031",
-      "amount": -11.75,
-      "place": "Five Guys",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-08",
-      "time": "16:52:08",
-      "transaction_id": "TXN032",
-      "amount": -28.00,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-09",
-      "time": "10:37:54",
-      "transaction_id": "TXN033",
-      "amount": -55.20,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-09",
-      "time": "13:24:16",
-      "transaction_id": "TXN034",
-      "amount": -8.99,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-09",
-      "time": "20:11:43",
-      "transaction_id": "TXN035",
-      "amount": -16.50,
-      "place": "Domino's Pizza",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-10",
-      "time": "09:03:29",
-      "transaction_id": "TXN036",
-      "amount": -5.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-10",
-      "time": "12:58:47",
-      "transaction_id": "TXN037",
-      "amount": -12.25,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-10",
-      "time": "18:35:22",
-      "transaction_id": "TXN038",
-      "amount": -35.00,
-      "place": "Olive Garden",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-10",
-      "time": "20:47:15",
-      "transaction_id": "TXN039",
-      "amount": 17.50,
-      "place": "Venmo from Jessica - Dinner split",
-      "category": "Income"
-    },
-    {
-      "date": "2024-12-11",
-      "time": "08:21:38",
+      "time": "00:05:12",
       "transaction_id": "TXN040",
-      "amount": -4.75,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
+      "amount": 1500.0,
+      "place": "Financial Aid - Monthly Disbursement",
+      "category": "Income & Transfers"
     },
     {
-      "date": "2024-12-11",
-      "time": "13:49:53",
+      "date": "2024-12-01",
+      "time": "08:03:03",
       "transaction_id": "TXN041",
-      "amount": -10.99,
-      "place": "Panda Express",
-      "category": "Food"
+      "amount": -125,
+      "place": "State Farm Car Insurance",
+      "category": "Transport"
     },
     {
-      "date": "2024-12-11",
-      "time": "17:16:41",
+      "date": "2024-12-01",
+      "time": "08:11:51",
       "transaction_id": "TXN042",
-      "amount": -42.80,
-      "place": "Target",
-      "category": "Groceries"
+      "amount": -850,
+      "place": "Campus Housing - Rent",
+      "category": "Housing & Bills"
     },
     {
-      "date": "2024-12-12",
-      "time": "10:42:19",
+      "date": "2024-12-01",
+      "time": "08:13:18",
       "transaction_id": "TXN043",
-      "amount": -7.25,
-      "place": "Starbucks",
-      "category": "Food"
+      "amount": -35,
+      "place": "Xfinity Internet Auto-Pay",
+      "category": "Housing & Bills"
     },
     {
-      "date": "2024-12-12",
-      "time": "14:28:56",
+      "date": "2024-12-01",
+      "time": "08:14:05",
       "transaction_id": "TXN044",
-      "amount": -13.50,
-      "place": "Jersey Mike's",
-      "category": "Food"
+      "amount": -45.67,
+      "place": "Electric Company Auto-Pay",
+      "category": "Housing & Bills"
     },
     {
-      "date": "2024-12-12",
-      "time": "16:53:37",
+      "date": "2024-12-01",
+      "time": "08:26:08",
       "transaction_id": "TXN045",
-      "amount": -30.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
+      "amount": -30,
+      "place": "Water & Sewage Auto-Pay",
+      "category": "Housing & Bills"
     },
     {
-      "date": "2024-12-13",
-      "time": "09:07:24",
+      "date": "2024-12-01",
+      "time": "09:05:21",
       "transaction_id": "TXN046",
-      "amount": -5.00,
-      "place": "Dunkin Donuts",
-      "category": "Food"
+      "amount": -15.99,
+      "place": "Netflix Subscription",
+      "category": "Subscriptions"
     },
     {
-      "date": "2024-12-13",
-      "time": "12:44:08",
+      "date": "2024-12-01",
+      "time": "09:18:55",
       "transaction_id": "TXN047",
-      "amount": -9.75,
-      "place": "Wendy's",
-      "category": "Food"
+      "amount": -5.99,
+      "place": "Spotify Premium",
+      "category": "Subscriptions"
     },
     {
-      "date": "2024-12-13",
-      "time": "18:56:31",
+      "date": "2024-12-01",
+      "time": "13:35:10",
       "transaction_id": "TXN048",
-      "amount": -58.30,
-      "place": "Walmart",
-      "category": "Groceries"
+      "amount": -62.87,
+      "place": "Kroger - Groceries",
+      "category": "Food"
     },
     {
-      "date": "2024-12-14",
-      "time": "08:33:47",
+      "date": "2024-12-01",
+      "time": "18:39:51",
       "transaction_id": "TXN049",
-      "amount": -6.50,
-      "place": "Starbucks",
-      "category": "Food"
+      "amount": -20.36,
+      "place": "Walgreens - Medicine",
+      "category": "Health"
     },
     {
-      "date": "2024-12-14",
-      "time": "13:12:29",
+      "date": "2024-12-02",
+      "time": "7:32:26",
       "transaction_id": "TXN050",
-      "amount": -11.25,
-      "place": "Chick-fil-A",
+      "amount": -5.33,
+      "place": "Dunkin Donuts",
       "category": "Food"
     },
     {
-      "date": "2024-12-14",
-      "time": "20:39:16",
+      "date": "2024-12-03",
+      "time": "16:27:32",
       "transaction_id": "TXN051",
-      "amount": -25.00,
-      "place": "Bowling Alley",
-      "category": "Leisure"
+      "amount": -10.91,
+      "place": "Taco Bell",
+      "category": "Food"
     },
     {
-      "date": "2024-12-14",
-      "time": "22:15:43",
+      "date": "2024-12-03",
+      "time": "9:00:56",
       "transaction_id": "TXN052",
-      "amount": -12.00,
-      "place": "Zelle to Tom - Bowling split",
-      "category": "Leisure"
-    },
-    {
-      "date": "2024-12-15",
-      "time": "10:51:22",
-      "transaction_id": "TXN053",
-      "amount": -14.99,
-      "place": "Hulu",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2024-12-15",
-      "time": "12:08:54",
-      "transaction_id": "TXN054",
-      "amount": -10.50,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-15",
-      "time": "17:42:37",
-      "transaction_id": "TXN055",
-      "amount": -45.60,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-16",
-      "time": "11:24:18",
-      "transaction_id": "TXN056",
-      "amount": -75.00,
-      "place": "BlueCross Health Insurance",
-      "category": "Insurance"
-    },
-    {
-      "date": "2024-12-16",
-      "time": "09:19:45",
-      "transaction_id": "TXN057",
-      "amount": -5.75,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-16",
-      "time": "13:47:21",
-      "transaction_id": "TXN058",
-      "amount": -12.99,
-      "place": "Panera Bread",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-16",
-      "time": "19:28:09",
-      "transaction_id": "TXN059",
-      "amount": -18.50,
-      "place": "Pizza Place",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-17",
-      "time": "08:54:36",
-      "transaction_id": "TXN060",
-      "amount": -6.25,
+      "amount": -5.69,
       "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-17",
-      "time": "12:31:58",
-      "transaction_id": "TXN061",
-      "amount": -11.75,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-17",
-      "time": "16:18:44",
-      "transaction_id": "TXN062",
-      "amount": -29.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-18",
-      "time": "10:26:13",
-      "transaction_id": "TXN063",
-      "amount": -52.40,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-18",
-      "time": "13:52:47",
-      "transaction_id": "TXN064",
-      "amount": -9.99,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-18",
-      "time": "20:14:29",
-      "transaction_id": "TXN065",
-      "amount": -15.00,
-      "place": "Bar & Grill",
-      "category": "Leisure"
-    },
-    {
-      "date": "2024-12-19",
-      "time": "01:43:28",
-      "transaction_id": "TXN066",
-      "amount": 455.00,
-      "place": "Campus Library - Paycheck (26 hrs)",
-      "category": "Income"
-    },
-    {
-      "date": "2024-12-19",
-      "time": "09:37:52",
-      "transaction_id": "TXN067",
-      "amount": -4.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-19",
-      "time": "12:05:16",
-      "transaction_id": "TXN068",
-      "amount": -13.25,
-      "place": "Five Guys",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-19",
-      "time": "18:49:33",
-      "transaction_id": "TXN069",
-      "amount": -48.90,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-20",
-      "time": "08:12:41",
-      "transaction_id": "TXN070",
-      "amount": -5.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-20",
-      "time": "13:28:19",
-      "transaction_id": "TXN071",
-      "amount": -11.50,
-      "place": "Panda Express",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-20",
-      "time": "19:56:07",
-      "transaction_id": "TXN072",
-      "amount": -28.00,
-      "place": "Restaurant",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-21",
-      "time": "09:43:24",
-      "transaction_id": "TXN073",
-      "amount": -4.75,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-21",
-      "time": "14:17:38",
-      "transaction_id": "TXN074",
-      "amount": -20.00,
-      "place": "Movie Theater",
-      "category": "Leisure"
-    },
-    {
-      "date": "2024-12-21",
-      "time": "17:31:52",
-      "transaction_id": "TXN075",
-      "amount": -31.00,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-22",
-      "time": "10:58:46",
-      "transaction_id": "TXN076",
-      "amount": -61.20,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-22",
-      "time": "12:44:33",
-      "transaction_id": "TXN077",
-      "amount": -10.25,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-22",
-      "time": "20:22:19",
-      "transaction_id": "TXN078",
-      "amount": -17.50,
-      "place": "Domino's Pizza",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-23",
-      "time": "08:36:57",
-      "transaction_id": "TXN079",
-      "amount": -6.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-23",
-      "time": "13:14:42",
-      "transaction_id": "TXN080",
-      "amount": -12.75,
-      "place": "Chick-fil-A",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-23",
-      "time": "18:47:28",
-      "transaction_id": "TXN081",
-      "amount": -35.00,
-      "place": "Dinner with Friends",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-23",
-      "time": "20:33:14",
-      "transaction_id": "TXN082",
-      "amount": 30.00,
-      "place": "Venmo from Alex - Dinner split",
-      "category": "Income"
-    },
-    {
-      "date": "2024-12-24",
-      "time": "09:21:39",
-      "transaction_id": "TXN083",
-      "amount": -5.25,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-24",
-      "time": "14:08:53",
-      "transaction_id": "TXN084",
-      "amount": -44.30,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-24",
-      "time": "16:52:27",
-      "transaction_id": "TXN085",
-      "amount": -30.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-25",
-      "time": "12:34:18",
-      "transaction_id": "TXN086",
-      "amount": -25.00,
-      "place": "Restaurant",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-25",
-      "time": "19:15:42",
-      "transaction_id": "TXN087",
-      "amount": 150.00,
-      "place": "Holiday Gift Money - Grandma",
-      "category": "Income"
-    },
-    {
-      "date": "2024-12-26",
-      "time": "10:47:29",
-      "transaction_id": "TXN088",
-      "amount": -56.80,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-26",
-      "time": "13:23:56",
-      "transaction_id": "TXN089",
-      "amount": -9.50,
-      "place": "Wendy's",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-26",
-      "time": "19:38:14",
-      "transaction_id": "TXN090",
-      "amount": -18.00,
-      "place": "Pizza Hut",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-27",
-      "time": "08:51:37",
-      "transaction_id": "TXN091",
-      "amount": -5.75,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-27",
-      "time": "12:19:48",
-      "transaction_id": "TXN092",
-      "amount": -11.99,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-27",
-      "time": "17:42:23",
-      "transaction_id": "TXN093",
-      "amount": -28.00,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-28",
-      "time": "09:28:54",
-      "transaction_id": "TXN094",
-      "amount": -4.50,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-28",
-      "time": "13:56:17",
-      "transaction_id": "TXN095",
-      "amount": -10.75,
-      "place": "Panda Express",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-28",
-      "time": "18:33:41",
-      "transaction_id": "TXN096",
-      "amount": -47.20,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-29",
-      "time": "10:14:26",
-      "transaction_id": "TXN097",
-      "amount": -6.25,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-29",
-      "time": "14:41:38",
-      "transaction_id": "TXN098",
-      "amount": -13.50,
-      "place": "Jersey Mike's",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-29",
-      "time": "20:27:52",
-      "transaction_id": "TXN099",
-      "amount": -22.00,
-      "place": "Bar",
-      "category": "Leisure"
-    },
-    {
-      "date": "2024-12-30",
-      "time": "09:52:19",
-      "transaction_id": "TXN100",
-      "amount": -5.00,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-30",
-      "time": "12:16:43",
-      "transaction_id": "TXN101",
-      "amount": -11.25,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-30",
-      "time": "17:48:27",
-      "transaction_id": "TXN102",
-      "amount": -38.90,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-31",
-      "time": "11:23:54",
-      "transaction_id": "TXN103",
-      "amount": -7.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-31",
-      "time": "15:37:16",
-      "transaction_id": "TXN104",
-      "amount": -32.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-31",
-      "time": "22:18:47",
-      "transaction_id": "TXN105",
-      "amount": -45.00,
-      "place": "New Year's Party",
-      "category": "Leisure"
-    },
-    {
-      "date": "2025-01-01",
-      "time": "08:01:33",
-      "transaction_id": "TXN106",
-      "amount": -850.00,
-      "place": "Campus Housing - Rent",
-      "category": "Rent"
-    },
-    {
-      "date": "2025-01-01",
-      "time": "08:02:47",
-      "transaction_id": "TXN107",
-      "amount": -48.00,
-      "place": "Electric Company Auto-Pay",
-      "category": "Utilities"
-    },
-    {
-      "date": "2025-01-01",
-      "time": "08:03:52",
-      "transaction_id": "TXN108",
-      "amount": -35.00,
-      "place": "Xfinity Internet Auto-Pay",
-      "category": "Utilities"
-    },
-    {
-      "date": "2025-01-01",
-      "time": "08:04:38",
-      "transaction_id": "TXN109",
-      "amount": -30.00,
-      "place": "Water & Sewage Auto-Pay",
-      "category": "Utilities"
-    },
-    {
-      "date": "2025-01-01",
-      "time": "09:28:15",
-      "transaction_id": "TXN110",
-      "amount": -15.99,
-      "place": "Netflix Subscription",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2025-01-01",
-      "time": "10:56:42",
-      "transaction_id": "TXN111",
-      "amount": -125.00,
-      "place": "State Farm Car Insurance",
-      "category": "Insurance"
-    },
-    {
-      "date": "2025-01-01",
-      "time": "16:34:29",
-      "transaction_id": "TXN112",
-      "amount": -5.99,
-      "place": "Spotify Premium",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2025-01-02",
-      "time": "02:51:17",
-      "transaction_id": "TXN113",
-      "amount": 368.25,
-      "place": "Campus Library - Paycheck (21 hrs)",
-      "category": "Income"
-    },
-    {
-      "date": "2025-01-02",
-      "time": "09:14:38",
-      "transaction_id": "TXN114",
-      "amount": -6.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-02",
-      "time": "12:47:25",
-      "transaction_id": "TXN115",
-      "amount": -12.75,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-02",
-      "time": "18:29:53",
-      "transaction_id": "TXN116",
-      "amount": -54.60,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-03",
-      "time": "08:42:19",
-      "transaction_id": "TXN117",
-      "amount": -4.75,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-03",
-      "time": "13:18:46",
-      "transaction_id": "TXN118",
-      "amount": -10.50,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-03",
-      "time": "17:55:31",
-      "transaction_id": "TXN119",
-      "amount": -29.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-04",
-      "time": "09:37:24",
-      "transaction_id": "TXN120",
-      "amount": -5.50,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-04",
-      "time": "12:03:58",
-      "transaction_id": "TXN121",
-      "amount": -11.99,
-      "place": "Chick-fil-A",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-04",
-      "time": "19:41:17",
-      "transaction_id": "TXN122",
-      "amount": -16.50,
-      "place": "Pizza Place",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-05",
-      "time": "08:22:43",
-      "transaction_id": "TXN123",
-      "amount": -9.99,
-      "place": "Amazon Prime",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2025-01-05",
-      "time": "10:49:16",
-      "transaction_id": "TXN124",
-      "amount": -48.30,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-05",
-      "time": "14:27:39",
-      "transaction_id": "TXN125",
-      "amount": -13.25,
-      "place": "Panera Bread",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-06",
-      "time": "08:58:52",
-      "transaction_id": "TXN126",
-      "amount": -6.25,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-06",
-      "time": "12:34:27",
-      "transaction_id": "TXN127",
-      "amount": -9.75,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-06",
-      "time": "18:16:44",
-      "transaction_id": "TXN128",
-      "amount": -42.70,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-07",
-      "time": "09:43:18",
-      "transaction_id": "TXN129",
-      "amount": -5.00,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-07",
-      "time": "13:21:56",
-      "transaction_id": "TXN130",
-      "amount": -11.50,
-      "place": "Panda Express",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-07",
-      "time": "20:08:33",
-      "transaction_id": "TXN131",
-      "amount": -18.00,
-      "place": "Buffalo Wild Wings",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-08",
-      "time": "08:15:47",
-      "transaction_id": "TXN132",
-      "amount": -4.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-08",
-      "time": "12:52:34",
-      "transaction_id": "TXN133",
-      "amount": -12.75,
-      "place": "Five Guys",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-08",
-      "time": "16:38:21",
-      "transaction_id": "TXN134",
-      "amount": -31.00,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-09",
-      "time": "10:24:59",
-      "transaction_id": "TXN135",
-      "amount": -51.90,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-09",
-      "time": "13:57:42",
-      "transaction_id": "TXN136",
-      "amount": -10.25,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-09",
-      "time": "19:14:28",
-      "transaction_id": "TXN137",
-      "amount": -17.99,
-      "place": "Domino's Pizza",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-10",
-      "time": "09:06:13",
-      "transaction_id": "TXN138",
-      "amount": -6.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-10",
-      "time": "12:41:37",
-      "transaction_id": "TXN139",
-      "amount": -11.75,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-10",
-      "time": "19:27:54",
-      "transaction_id": "TXN140",
-      "amount": -24.00,
-      "place": "Movie Theater",
-      "category": "Leisure"
-    },
-    {
-      "date": "2025-01-10",
-      "time": "21:45:16",
-      "transaction_id": "TXN141",
-      "amount": 20.00,
-      "place": "Zelle from Chris - Movie tickets",
-      "category": "Income"
-    },
-    {
-      "date": "2025-01-11",
-      "time": "08:33:29",
-      "transaction_id": "TXN142",
-      "amount": -5.25,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-11",
-      "time": "14:19:48",
-      "transaction_id": "TXN143",
-      "amount": -13.50,
-      "place": "Jersey Mike's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-11",
-      "time": "18:47:22",
-      "transaction_id": "TXN144",
-      "amount": -46.80,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-12",
-      "time": "09:51:36",
-      "transaction_id": "TXN145",
-      "amount": -5.75,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-12",
-      "time": "13:28:14",
-      "transaction_id": "TXN146",
-      "amount": -9.99,
-      "place": "Wendy's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-12",
-      "time": "17:12:47",
-      "transaction_id": "TXN147",
-      "amount": -30.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-13",
-      "time": "10:08:23",
-      "transaction_id": "TXN148",
-      "amount": -4.75,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-13",
-      "time": "12:54:38",
-      "transaction_id": "TXN149",
-      "amount": -12.25,
-      "place": "Chick-fil-A",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-13",
-      "time": "18:36:52",
-      "transaction_id": "TXN150",
-      "amount": -39.40,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-14",
-      "time": "08:27:19",
-      "transaction_id": "TXN151",
-      "amount": -6.00,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-14",
-      "time": "13:03:44",
-      "transaction_id": "TXN152",
-      "amount": -11.50,
-      "place": "Panda Express",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-14",
-      "time": "20:19:27",
-      "transaction_id": "TXN153",
-      "amount": -28.00,
-      "place": "Restaurant",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-15",
-      "time": "10:42:56",
-      "transaction_id": "TXN154",
-      "amount": -14.99,
-      "place": "Hulu",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2025-01-15",
-      "time": "09:38:41",
-      "transaction_id": "TXN155",
-      "amount": -5.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-15",
-      "time": "12:14:29",
-      "transaction_id": "TXN156",
-      "amount": -10.75,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-15",
-      "time": "17:53:18",
-      "transaction_id": "TXN157",
-      "amount": -58.20,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-16",
-      "time": "03:24:47",
-      "transaction_id": "TXN158",
-      "amount": 490.00,
-      "place": "Campus Library - Paycheck (28 hrs)",
-      "category": "Income"
-    },
-    {
-      "date": "2025-01-16",
-      "time": "13:47:33",
-      "transaction_id": "TXN159",
-      "amount": -75.00,
-      "place": "BlueCross Health Insurance",
-      "category": "Insurance"
-    },
-    {
-      "date": "2025-01-16",
-      "time": "08:56:24",
-      "transaction_id": "TXN160",
-      "amount": -4.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-16",
-      "time": "13:32:16",
-      "transaction_id": "TXN161",
-      "amount": -12.99,
-      "place": "Panera Bread",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-16",
-      "time": "19:18:43",
-      "transaction_id": "TXN162",
-      "amount": -19.50,
-      "place": "Pizza Hut",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-17",
-      "time": "09:12:37",
-      "transaction_id": "TXN163",
-      "amount": -6.25,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-17",
-      "time": "12:49:58",
-      "transaction_id": "TXN164",
-      "amount": -11.75,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-17",
-      "time": "16:27:14",
-      "transaction_id": "TXN165",
-      "amount": -28.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-18",
-      "time": "10:36:49",
-      "transaction_id": "TXN166",
-      "amount": -44.90,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-18",
-      "time": "13:54:22",
-      "transaction_id": "TXN167",
-      "amount": -9.50,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-18",
-      "time": "21:17:38",
-      "transaction_id": "TXN168",
-      "amount": -30.00,
-      "place": "Bar & Grill",
-      "category": "Leisure"
-    },
-    {
-      "date": "2025-01-18",
-      "time": "23:42:15",
-      "transaction_id": "TXN169",
-      "amount": -18.00,
-      "place": "Zelle to Emma - Drinks split",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-19",
-      "time": "08:44:27",
-      "transaction_id": "TXN170",
-      "amount": -5.00,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-19",
-      "time": "14:21:53",
-      "transaction_id": "TXN171",
-      "amount": -13.25,
-      "place": "Five Guys",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-19",
-      "time": "18:39:16",
-      "transaction_id": "TXN172",
-      "amount": -36.80,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-20",
-      "time": "09:57:34",
-      "transaction_id": "TXN173",
-      "amount": -5.75,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-20",
-      "time": "12:23:48",
-      "transaction_id": "TXN174",
-      "amount": -11.50,
-      "place": "Panda Express",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-20",
-      "time": "19:46:21",
-      "transaction_id": "TXN175",
-      "amount": -26.00,
-      "place": "Restaurant",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-21",
-      "time": "08:18:52",
-      "transaction_id": "TXN176",
-      "amount": -4.75,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-21",
-      "time": "13:41:19",
-      "transaction_id": "TXN177",
-      "amount": -10.99,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-21",
-      "time": "17:28:43",
-      "transaction_id": "TXN178",
-      "amount": -32.00,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-22",
-      "time": "10:52:26",
-      "transaction_id": "TXN179",
-      "amount": -53.40,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-22",
-      "time": "12:37:58",
-      "transaction_id": "TXN180",
-      "amount": -9.75,
-      "place": "Wendy's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-22",
-      "time": "20:14:32",
-      "transaction_id": "TXN181",
-      "amount": -18.50,
-      "place": "Domino's Pizza",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-23",
-      "time": "08:49:17",
-      "transaction_id": "TXN182",
-      "amount": -6.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-23",
-      "time": "13:16:44",
-      "transaction_id": "TXN183",
-      "amount": -12.25,
-      "place": "Chick-fil-A",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-23",
-      "time": "18:53:29",
-      "transaction_id": "TXN184",
-      "amount": -32.00,
-      "place": "Dinner",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-24",
-      "time": "09:27:38",
-      "transaction_id": "TXN185",
-      "amount": -5.25,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-24",
-      "time": "14:45:51",
-      "transaction_id": "TXN186",
-      "amount": -22.00,
-      "place": "Movie Theater",
-      "category": "Leisure"
-    },
-    {
-      "date": "2025-01-24",
-      "time": "17:32:26",
-      "transaction_id": "TXN187",
-      "amount": -41.60,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-25",
-      "time": "08:38:14",
-      "transaction_id": "TXN188",
-      "amount": -4.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-25",
-      "time": "12:09:47",
-      "transaction_id": "TXN189",
-      "amount": -13.75,
-      "place": "Jersey Mike's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-25",
-      "time": "16:44:33",
-      "transaction_id": "TXN190",
-      "amount": -29.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-26",
-      "time": "09:21:58",
-      "transaction_id": "TXN191",
-      "amount": -5.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-26",
-      "time": "13:48:12",
-      "transaction_id": "TXN192",
-      "amount": -11.99,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-26",
-      "time": "18:25:46",
-      "transaction_id": "TXN193",
-      "amount": -47.30,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-27",
-      "time": "08:14:29",
-      "transaction_id": "TXN194",
-      "amount": -6.00,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-27",
-      "time": "12:56:37",
-      "transaction_id": "TXN195",
-      "amount": -10.50,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-27",
-      "time": "19:37:54",
-      "transaction_id": "TXN196",
-      "amount": -24.00,
-      "place": "Buffalo Wild Wings",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-28",
-      "time": "09:43:21",
-      "transaction_id": "TXN197",
-      "amount": -4.75,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-28",
-      "time": "13:29:48",
-      "transaction_id": "TXN198",
-      "amount": -12.50,
-      "place": "Panda Express",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-28",
-      "time": "17:06:13",
-      "transaction_id": "TXN199",
-      "amount": -50.80,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-29",
-      "time": "08:52:36",
-      "transaction_id": "TXN200",
-      "amount": -5.75,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-29",
-      "time": "12:18:59",
-      "transaction_id": "TXN201",
-      "amount": -11.25,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-29",
-      "time": "20:41:27",
-      "transaction_id": "TXN202",
-      "amount": -17.99,
-      "place": "Pizza Place",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-30",
-      "time": "02:39:54",
-      "transaction_id": "TXN203",
-      "amount": 403.25,
-      "place": "Campus Library - Paycheck (23 hrs)",
-      "category": "Income"
-    },
-    {
-      "date": "2025-01-30",
-      "time": "10:27:42",
-      "transaction_id": "TXN204",
-      "amount": -6.25,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-30",
-      "time": "13:53:18",
-      "transaction_id": "TXN205",
-      "amount": -13.50,
-      "place": "Panera Bread",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-30",
-      "time": "18:34:51",
-      "transaction_id": "TXN206",
-      "amount": -35.00,
-      "place": "Restaurant",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-30",
-      "time": "20:28:37",
-      "transaction_id": "TXN207",
-      "amount": 28.00,
-      "place": "Venmo from Ryan - Dinner split",
-      "category": "Income"
-    },
-    {
-      "date": "2025-01-31",
-      "time": "09:16:24",
-      "transaction_id": "TXN208",
-      "amount": -5.00,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-31",
-      "time": "12:47:39",
-      "transaction_id": "TXN209",
-      "amount": -9.99,
-      "place": "Wendy's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-31",
-      "time": "16:23:56",
-      "transaction_id": "TXN210",
-      "amount": -31.00,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-31",
-      "time": "19:08:14",
-      "transaction_id": "TXN211",
-      "amount": -43.70,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-02-01",
-      "time": "08:03:28",
-      "transaction_id": "TXN212",
-      "amount": -850.00,
-      "place": "Campus Housing - Rent",
-      "category": "Rent"
-    },
-    {
-      "date": "2025-02-01",
-      "time": "08:04:41",
-      "transaction_id": "TXN213",
-      "amount": -42.00,
-      "place": "Electric Company Auto-Pay",
-      "category": "Utilities"
-    },
-    {
-      "date": "2025-02-01",
-      "time": "08:05:19",
-      "transaction_id": "TXN214",
-      "amount": -35.00,
-      "place": "Xfinity Internet Auto-Pay",
-      "category": "Utilities"
-    },
-    {
-      "date": "2025-02-01",
-      "time": "08:06:33",
-      "transaction_id": "TXN215",
-      "amount": -30.00,
-      "place": "Water & Sewage Auto-Pay",
-      "category": "Utilities"
-    },
-    {
-      "date": "2025-02-01",
-      "time": "09:41:27",
-      "transaction_id": "TXN216",
-      "amount": -15.99,
-      "place": "Netflix Subscription",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2025-02-01",
-      "time": "10:18:54",
-      "transaction_id": "TXN217",
-      "amount": -125.00,
-      "place": "State Farm Car Insurance",
-      "category": "Insurance"
-    },
-    {
-      "date": "2025-02-01",
-      "time": "16:27:16",
-      "transaction_id": "TXN218",
-      "amount": -5.99,
-      "place": "Spotify Premium",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2025-02-02",
-      "time": "08:49:33",
-      "transaction_id": "TXN219",
-      "amount": -6.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-02",
-      "time": "12:14:47",
-      "transaction_id": "TXN220",
-      "amount": -12.25,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-02",
-      "time": "17:52:28",
-      "transaction_id": "TXN221",
-      "amount": -49.60,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-02-03",
-      "time": "09:28:16",
-      "transaction_id": "TXN222",
-      "amount": -4.75,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-03",
-      "time": "13:36:42",
-      "transaction_id": "TXN223",
-      "amount": -11.50,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-03",
-      "time": "16:54:39",
-      "transaction_id": "TXN224",
-      "amount": -30.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-02-04",
-      "time": "08:17:52",
-      "transaction_id": "TXN225",
-      "amount": -5.50,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-04",
-      "time": "12:43:29",
-      "transaction_id": "TXN226",
-      "amount": -10.99,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-04",
-      "time": "18:21:14",
-      "transaction_id": "TXN227",
-      "amount": -38.90,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-02-05",
-      "time": "08:39:47",
-      "transaction_id": "TXN228",
-      "amount": -9.99,
-      "place": "Amazon Prime",
-      "category": "Subscriptions"
-    },
-    {
-      "date": "2025-02-05",
-      "time": "09:58:23",
-      "transaction_id": "TXN229",
-      "amount": -6.00,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-05",
-      "time": "13:24:56",
-      "transaction_id": "TXN230",
-      "amount": -12.75,
-      "place": "Chick-fil-A",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-05",
-      "time": "19:47:38",
-      "transaction_id": "TXN231",
-      "amount": -19.99,
-      "place": "Pizza Hut",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-06",
-      "time": "08:52:14",
-      "transaction_id": "TXN232",
-      "amount": -5.25,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-06",
-      "time": "12:37:49",
-      "transaction_id": "TXN233",
-      "amount": -11.25,
-      "place": "Panda Express",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-06",
-      "time": "17:14:32",
-      "transaction_id": "TXN234",
-      "amount": -45.30,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-07",
-      "time": "10:53:27",
-      "transaction_id": "TXN235",
-      "amount": -6.75,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-09",
-      "time": "11:42:18",
-      "transaction_id": "TXN236",
-      "amount": -4.25,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-11",
-      "time": "14:27:53",
-      "transaction_id": "TXN237",
-      "amount": -8.99,
-      "place": "McDonald's",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-13",
-      "time": "16:08:46",
-      "transaction_id": "TXN238",
-      "amount": -5.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-15",
-      "time": "11:36:29",
-      "transaction_id": "TXN239",
-      "amount": -13.99,
-      "place": "Five Guys",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-17",
-      "time": "09:48:57",
-      "transaction_id": "TXN240",
-      "amount": -5.00,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-19",
-      "time": "15:29:41",
-      "transaction_id": "TXN241",
-      "amount": -7.25,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-21",
-      "time": "12:51:34",
-      "transaction_id": "TXN242",
-      "amount": -10.50,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-23",
-      "time": "10:19:28",
-      "transaction_id": "TXN243",
-      "amount": -6.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-25",
-      "time": "14:47:15",
-      "transaction_id": "TXN244",
-      "amount": -4.75,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-27",
-      "time": "11:23:58",
-      "transaction_id": "TXN245",
-      "amount": -9.25,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-29",
-      "time": "16:38:42",
-      "transaction_id": "TXN246",
-      "amount": -5.75,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-31",
-      "time": "13:52:27",
-      "transaction_id": "TXN247",
-      "amount": -12.50,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-02",
-      "time": "10:34:19",
-      "transaction_id": "TXN248",
-      "amount": -4.50,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-04",
-      "time": "15:46:33",
-      "transaction_id": "TXN249",
-      "amount": -8.75,
-      "place": "Wendy's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-06",
-      "time": "09:27:48",
-      "transaction_id": "TXN250",
-      "amount": -5.25,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-08",
-      "time": "11:39:24",
-      "transaction_id": "TXN251",
-      "amount": -6.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-10",
-      "time": "14:58:16",
-      "transaction_id": "TXN252",
-      "amount": -10.99,
-      "place": "Panda Express",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-12",
-      "time": "10:22:39",
-      "transaction_id": "TXN253",
-      "amount": -4.75,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-14",
-      "time": "16:17:52",
-      "transaction_id": "TXN254",
-      "amount": -13.25,
-      "place": "Jersey Mike's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-16",
-      "time": "11:54:27",
-      "transaction_id": "TXN255",
-      "amount": -5.50,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-18",
-      "time": "12:41:38",
-      "transaction_id": "TXN256",
-      "amount": -11.75,
-      "place": "Chipotle",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-20",
-      "time": "08:29:53",
-      "transaction_id": "TXN257",
-      "amount": -4.25,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-22",
-      "time": "15:33:16",
-      "transaction_id": "TXN258",
-      "amount": -7.99,
-      "place": "Taco Bell",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-24",
-      "time": "10:46:42",
-      "transaction_id": "TXN259",
-      "amount": -6.00,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-26",
-      "time": "13:58:29",
-      "transaction_id": "TXN260",
-      "amount": -9.50,
-      "place": "Subway",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-28",
-      "time": "11:12:47",
-      "transaction_id": "TXN261",
-      "amount": -5.75,
-      "place": "Campus Coffee Shop",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-30",
-      "time": "16:24:38",
-      "transaction_id": "TXN262",
-      "amount": -12.99,
-      "place": "Chick-fil-A",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-01",
-      "time": "14:38:52",
-      "transaction_id": "TXN263",
-      "amount": -4.50,
-      "place": "Dunkin Donuts",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-03",
-      "time": "10:51:19",
-      "transaction_id": "TXN264",
-      "amount": -6.75,
-      "place": "Starbucks",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-05",
-      "time": "15:27:43",
-      "transaction_id": "TXN265",
-      "amount": -10.25,
-      "place": "Panera Bread",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-10",
-      "time": "16:43:28",
-      "transaction_id": "TXN266",
-      "amount": -27.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-20",
-      "time": "17:18:54",
-      "transaction_id": "TXN267",
-      "amount": -29.50,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-30",
-      "time": "15:56:37",
-      "transaction_id": "TXN268",
-      "amount": -31.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-10",
-      "time": "16:42:19",
-      "transaction_id": "TXN269",
-      "amount": -28.50,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-20",
-      "time": "17:29:46",
-      "transaction_id": "TXN270",
-      "amount": -30.00,
-      "place": "Shell Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2025-01-30",
-      "time": "16:13:28",
-      "transaction_id": "TXN271",
-      "amount": -29.00,
-      "place": "BP Gas Station",
-      "category": "Fuel"
-    },
-    {
-      "date": "2024-12-14",
-      "time": "19:47:32",
-      "transaction_id": "TXN272",
-      "amount": -18.00,
-      "place": "Cinema",
-      "category": "Leisure"
-    },
-    {
-      "date": "2024-12-28",
-      "time": "20:23:48",
-      "transaction_id": "TXN273",
-      "amount": -35.00,
-      "place": "Concert",
-      "category": "Leisure"
-    },
-    {
-      "date": "2025-01-11",
-      "time": "21:14:57",
-      "transaction_id": "TXN274",
-      "amount": -28.00,
-      "place": "Sports Bar",
-      "category": "Leisure"
-    },
-    {
-      "date": "2025-01-25",
-      "time": "19:38:24",
-      "transaction_id": "TXN275",
-      "amount": -20.00,
-      "place": "Arcade",
-      "category": "Leisure"
-    },
-    {
-      "date": "2025-02-02",
-      "time": "20:52:16",
-      "transaction_id": "TXN276",
-      "amount": -26.00,
-      "place": "Bowling",
-      "category": "Leisure"
-    },
-    {
-      "date": "2024-12-08",
-      "time": "18:34:19",
-      "transaction_id": "TXN277",
-      "amount": -38.20,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-16",
-      "time": "17:56:42",
-      "transaction_id": "TXN278",
-      "amount": -41.50,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-24",
-      "time": "16:27:38",
-      "transaction_id": "TXN279",
-      "amount": -55.80,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-05",
-      "time": "18:49:23",
-      "transaction_id": "TXN280",
-      "amount": -43.90,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-12",
-      "time": "17:21:54",
-      "transaction_id": "TXN281",
-      "amount": -49.60,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-19",
-      "time": "18:43:17",
-      "transaction_id": "TXN282",
-      "amount": -52.40,
-      "place": "Kroger",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-01-26",
-      "time": "17:38:29",
-      "transaction_id": "TXN283",
-      "amount": -46.70,
-      "place": "Walmart",
-      "category": "Groceries"
-    },
-    {
-      "date": "2025-02-02",
-      "time": "18:54:46",
-      "transaction_id": "TXN284",
-      "amount": -51.20,
-      "place": "Target",
-      "category": "Groceries"
-    },
-    {
-      "date": "2024-12-06",
-      "time": "20:16:39",
-      "transaction_id": "TXN285",
-      "amount": -22.50,
-      "place": "Outback Steakhouse",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-12",
-      "time": "19:52:27",
-      "transaction_id": "TXN286",
-      "amount": -27.00,
-      "place": "Applebee's",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-18",
-      "time": "20:28:14",
-      "transaction_id": "TXN287",
-      "amount": -31.50,
-      "place": "Red Lobster",
-      "category": "Food"
-    },
-    {
-      "date": "2024-12-26",
-      "time": "19:14:48",
-      "transaction_id": "TXN288",
-      "amount": -24.00,
-      "place": "Chili's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-03",
-      "time": "20:37:23",
-      "transaction_id": "TXN289",
-      "amount": -29.50,
-      "place": "Texas Roadhouse",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-09",
-      "time": "19:43:56",
-      "transaction_id": "TXN290",
-      "amount": -26.00,
-      "place": "Olive Garden",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-17",
-      "time": "20:59:18",
-      "transaction_id": "TXN291",
-      "amount": -33.00,
-      "place": "Cheesecake Factory",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-23",
-      "time": "19:27:42",
-      "transaction_id": "TXN292",
-      "amount": -28.50,
-      "place": "Red Robin",
-      "category": "Food"
-    },
-    {
-      "date": "2025-01-31",
-      "time": "20:46:35",
-      "transaction_id": "TXN293",
-      "amount": -25.00,
-      "place": "Applebee's",
-      "category": "Food"
-    },
-    {
-      "date": "2025-02-04",
-      "time": "19:58:27",
-      "transaction_id": "TXN294",
-      "amount": -30.00,
-      "place": "Outback Steakhouse",
       "category": "Food"
     },
     {
       "date": "2024-12-04",
-      "time": "20:24:53",
-      "transaction_id": "TXN295",
-      "amount": -14.99,
-      "place": "Domino's Pizza",
+      "time": "16:38:30",
+      "transaction_id": "TXN053",
+      "amount": -12.07,
+      "place": "Chick-fil-A",
       "category": "Food"
     },
     {
-      "date": "2025-01-15",
-      "time": "19:36:14",
-      "transaction_id": "TXN296",
-      "amount": -15.99,
+      "date": "2024-12-04",
+      "time": "17:39:49",
+      "transaction_id": "TXN054",
+      "amount": 6.03,
+      "place": "Venmo from Alex - Concert tickets",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2024-12-04",
+      "time": "8:50:20",
+      "transaction_id": "TXN055",
+      "amount": -6.89,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-05",
+      "time": "09:03:34",
+      "transaction_id": "TXN056",
+      "amount": -9.99,
+      "place": "Amazon Prime",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2024-12-06",
+      "time": "02:15:33",
+      "transaction_id": "TXN057",
+      "amount": 717.5,
+      "place": "Campus Library - Paycheck (41 hrs)",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2024-12-06",
+      "time": "14:38:02",
+      "transaction_id": "TXN058",
+      "amount": -18.51,
       "place": "Pizza Hut",
       "category": "Food"
     },
     {
-      "date": "2025-02-06",
-      "time": "19:23:48",
-      "transaction_id": "TXN297",
-      "amount": -15.25,
-      "place": "Domino's Pizza",
+      "date": "2024-12-06",
+      "time": "15:09:34",
+      "transaction_id": "TXN059",
+      "amount": 9.26,
+      "place": "Venmo from Alex - Concert tickets",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2024-12-06",
+      "time": "8:04:29",
+      "transaction_id": "TXN060",
+      "amount": -4.51,
+      "place": "Campus Coffee Shop",
       "category": "Food"
     },
     {
-      "date": "2025-01-13",
-      "time": "03:17:42",
-      "transaction_id": "TXN298",
-      "amount": 437.50,
-      "place": "Campus Library - Paycheck (25 hrs)",
-      "category": "Income"
+      "date": "2024-12-07",
+      "time": "18:46:36",
+      "transaction_id": "TXN061",
+      "amount": -29.63,
+      "place": "BP Gas Station",
+      "category": "Transport"
     },
     {
-      "date": "2025-01-27",
-      "time": "02:48:29",
-      "transaction_id": "TXN299",
-      "amount": 350.00,
-      "place": "Campus Library - Paycheck (20 hrs)",
-      "category": "Income"
+      "date": "2024-12-08",
+      "time": "15:17:01",
+      "transaction_id": "TXN062",
+      "amount": -46.25,
+      "place": "Kroger - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-09",
+      "time": "19:46:05",
+      "transaction_id": "TXN063",
+      "amount": -10.13,
+      "place": "Taco Bell",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-09",
+      "time": "7:14:28",
+      "transaction_id": "TXN064",
+      "amount": -7.11,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-10",
+      "time": "14:10:14",
+      "transaction_id": "TXN065",
+      "amount": -6.37,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-11",
+      "time": "10:08:28",
+      "transaction_id": "TXN066",
+      "amount": -6.84,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-12",
+      "time": "17:04:35",
+      "transaction_id": "TXN067",
+      "amount": -33.34,
+      "place": "Olive Garden",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-13",
+      "time": "14:09:35",
+      "transaction_id": "TXN068",
+      "amount": -7.15,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-14",
+      "time": "17:02:08",
+      "transaction_id": "TXN069",
+      "amount": -21.52,
+      "place": "CVS - Toiletries",
+      "category": "Personal"
     },
     {
       "date": "2024-12-15",
-      "time": "19:17:36",
-      "transaction_id": "TXN300",
-      "amount": -12.50,
-      "place": "Qdoba",
+      "time": "09:03:33",
+      "transaction_id": "TXN070",
+      "amount": -14.99,
+      "place": "Hulu",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2024-12-15",
+      "time": "15:41:01",
+      "transaction_id": "TXN071",
+      "amount": -44.14,
+      "place": "Walmart - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-16",
+      "time": "10:14:12",
+      "transaction_id": "TXN072",
+      "amount": -75,
+      "place": "BlueCross Health Insurance",
+      "category": "Health"
+    },
+    {
+      "date": "2024-12-16",
+      "time": "15:42:18",
+      "transaction_id": "TXN073",
+      "amount": -6.19,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-17",
+      "time": "7:14:59",
+      "transaction_id": "TXN074",
+      "amount": -5.62,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-19",
+      "time": "8:22:03",
+      "transaction_id": "TXN075",
+      "amount": -5.68,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-20",
+      "time": "02:15:33",
+      "transaction_id": "TXN076",
+      "amount": 700.0,
+      "place": "Campus Library - Paycheck (40 hrs)",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2024-12-20",
+      "time": "15:23:35",
+      "transaction_id": "TXN077",
+      "amount": -5.71,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-20",
+      "time": "16:08:46",
+      "transaction_id": "TXN078",
+      "amount": -10.42,
+      "place": "Panda Express",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-20",
+      "time": "18:40:07",
+      "transaction_id": "TXN079",
+      "amount": -21.04,
+      "place": "Walgreens - Medicine",
+      "category": "Health"
+    },
+    {
+      "date": "2024-12-21",
+      "time": "13:40:10",
+      "transaction_id": "TXN080",
+      "amount": -35.0,
+      "place": "Haircut - Great Clips",
+      "category": "Personal"
+    },
+    {
+      "date": "2024-12-21",
+      "time": "15:03:35",
+      "transaction_id": "TXN081",
+      "amount": -25.72,
+      "place": "Olive Garden",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-21",
+      "time": "16:46:48",
+      "transaction_id": "TXN082",
+      "amount": 12.86,
+      "place": "Venmo from Alex - Concert tickets",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2024-12-22",
+      "time": "11:39:36",
+      "transaction_id": "TXN083",
+      "amount": -43.04,
+      "place": "Target - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-22",
+      "time": "16:29:40",
+      "transaction_id": "TXN084",
+      "amount": -13.27,
+      "place": "Five Guys",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-22",
+      "time": "21:41:11",
+      "transaction_id": "TXN085",
+      "amount": -25.47,
+      "place": "Bowling Alley",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2024-12-22",
+      "time": "22:16:01",
+      "transaction_id": "TXN086",
+      "amount": -28.41,
+      "place": "Bar & Grill",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2024-12-23",
+      "time": "13:25:02",
+      "transaction_id": "TXN087",
+      "amount": -14.58,
+      "place": "Five Guys",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-23",
+      "time": "15:39:27",
+      "transaction_id": "TXN088",
+      "amount": -6.03,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-24",
+      "time": "8:46:01",
+      "transaction_id": "TXN089",
+      "amount": -5.97,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-25",
+      "time": "8:46:49",
+      "transaction_id": "TXN090",
+      "amount": -5.33,
+      "place": "Campus Coffee Shop",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-27",
+      "time": "15:00:32",
+      "transaction_id": "TXN091",
+      "amount": -7.24,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-29",
+      "time": "13:33:46",
+      "transaction_id": "TXN092",
+      "amount": -58.37,
+      "place": "Kroger - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-29",
+      "time": "15:37:23",
+      "transaction_id": "TXN093",
+      "amount": -10.79,
+      "place": "Panda Express",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-29",
+      "time": "16:00:37",
+      "transaction_id": "TXN094",
+      "amount": 5.4,
+      "place": "Zelle to Mike - Movie tickets",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2024-12-29",
+      "time": "22:57:59",
+      "transaction_id": "TXN095",
+      "amount": -27.67,
+      "place": "Bar & Grill",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2024-12-30",
+      "time": "9:04:31",
+      "transaction_id": "TXN096",
+      "amount": -5.33,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2024-12-31",
+      "time": "15:41:25",
+      "transaction_id": "TXN097",
+      "amount": -5.97,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "00:05:12",
+      "transaction_id": "TXN098",
+      "amount": 1500.0,
+      "place": "Financial Aid - Monthly Disbursement",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "08:03:15",
+      "transaction_id": "TXN099",
+      "amount": -125,
+      "place": "State Farm Car Insurance",
+      "category": "Transport"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "08:05:40",
+      "transaction_id": "TXN100",
+      "amount": -30,
+      "place": "Water & Sewage Auto-Pay",
+      "category": "Housing & Bills"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "08:08:27",
+      "transaction_id": "TXN101",
+      "amount": -850,
+      "place": "Campus Housing - Rent",
+      "category": "Housing & Bills"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "08:18:08",
+      "transaction_id": "TXN102",
+      "amount": -44.7,
+      "place": "Electric Company Auto-Pay",
+      "category": "Housing & Bills"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "08:21:24",
+      "transaction_id": "TXN103",
+      "amount": -35,
+      "place": "Xfinity Internet Auto-Pay",
+      "category": "Housing & Bills"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "09:13:48",
+      "transaction_id": "TXN104",
+      "amount": -15.99,
+      "place": "Netflix Subscription",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "09:27:05",
+      "transaction_id": "TXN105",
+      "amount": -5.99,
+      "place": "Spotify Premium",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "12:46:24",
+      "transaction_id": "TXN106",
+      "amount": -13.31,
+      "place": "Chipotle",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "19:35:08",
+      "transaction_id": "TXN107",
+      "amount": -34.18,
+      "place": "Shell Gas Station",
+      "category": "Transport"
+    },
+    {
+      "date": "2025-01-01",
+      "time": "8:18:22",
+      "transaction_id": "TXN108",
+      "amount": -7.36,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-02",
+      "time": "15:42:14",
+      "transaction_id": "TXN109",
+      "amount": -5.55,
+      "place": "Campus Coffee Shop",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-03",
+      "time": "02:15:33",
+      "transaction_id": "TXN110",
+      "amount": 822.5,
+      "place": "Campus Library - Paycheck (47 hrs)",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2025-01-04",
+      "time": "20:25:07",
+      "transaction_id": "TXN111",
+      "amount": -11.01,
+      "place": "Subway",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-05",
+      "time": "09:24:57",
+      "transaction_id": "TXN112",
+      "amount": -9.99,
+      "place": "Amazon Prime",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2025-01-05",
+      "time": "12:37:00",
+      "transaction_id": "TXN113",
+      "amount": -49.05,
+      "place": "Walmart - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-05",
+      "time": "16:00:00",
+      "transaction_id": "TXN114",
+      "amount": -13.77,
+      "place": "Five Guys",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-05",
+      "time": "17:36:44",
+      "transaction_id": "TXN115",
+      "amount": 6.88,
+      "place": "Zelle to Mike - Movie tickets",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2025-01-05",
+      "time": "21:16:31",
+      "transaction_id": "TXN116",
+      "amount": -21.86,
+      "place": "Movie Theater",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2025-01-06",
+      "time": "8:26:22",
+      "transaction_id": "TXN117",
+      "amount": -6.33,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-08",
+      "time": "15:09:10",
+      "transaction_id": "TXN118",
+      "amount": -6.57,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-09",
+      "time": "16:23:47",
+      "transaction_id": "TXN119",
+      "amount": -18.95,
+      "place": "Buffalo Wild Wings",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-09",
+      "time": "17:50:15",
+      "transaction_id": "TXN120",
+      "amount": 9.48,
+      "place": "Zelle to Mike - Movie tickets",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2025-01-10",
+      "time": "10:43:05",
+      "transaction_id": "TXN121",
+      "amount": -5.35,
+      "place": "Campus Coffee Shop",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-11",
+      "time": "18:50:46",
+      "transaction_id": "TXN122",
+      "amount": -30.26,
+      "place": "BP Gas Station",
+      "category": "Transport"
+    },
+    {
+      "date": "2025-01-11",
+      "time": "19:42:03",
+      "transaction_id": "TXN123",
+      "amount": -22.53,
+      "place": "Movie Theater",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2025-01-12",
+      "time": "13:40:59",
+      "transaction_id": "TXN124",
+      "amount": -56.77,
+      "place": "Walmart - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-12",
+      "time": "14:30:59",
+      "transaction_id": "TXN125",
+      "amount": -36.28,
+      "place": "Amazon - Clothes",
+      "category": "Shopping"
+    },
+    {
+      "date": "2025-01-12",
+      "time": "17:16:47",
+      "transaction_id": "TXN126",
+      "amount": -24.87,
+      "place": "Target - Personal Care",
+      "category": "Personal"
+    },
+    {
+      "date": "2025-01-12",
+      "time": "19:41:41",
+      "transaction_id": "TXN127",
+      "amount": -24.97,
+      "place": "Bowling Alley",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2025-01-12",
+      "time": "22:49:04",
+      "transaction_id": "TXN128",
+      "amount": -40.7,
+      "place": "Bar & Grill",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2025-01-13",
+      "time": "9:36:02",
+      "transaction_id": "TXN129",
+      "amount": -5.84,
+      "place": "Campus Coffee Shop",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-15",
+      "time": "09:18:14",
+      "transaction_id": "TXN130",
+      "amount": -14.99,
+      "place": "Hulu",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2025-01-15",
+      "time": "9:32:40",
+      "transaction_id": "TXN131",
+      "amount": -6.33,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-16",
+      "time": "10:02:47",
+      "transaction_id": "TXN132",
+      "amount": -75,
+      "place": "BlueCross Health Insurance",
+      "category": "Health"
+    },
+    {
+      "date": "2025-01-16",
+      "time": "18:11:25",
+      "transaction_id": "TXN133",
+      "amount": -8.69,
+      "place": "Taco Bell",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-16",
+      "time": "8:30:58",
+      "transaction_id": "TXN134",
+      "amount": -6.07,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-17",
+      "time": "02:15:33",
+      "transaction_id": "TXN135",
+      "amount": 735.0,
+      "place": "Campus Library - Paycheck (42 hrs)",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2025-01-17",
+      "time": "9:24:27",
+      "transaction_id": "TXN136",
+      "amount": -6.16,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-18",
+      "time": "17:21:40",
+      "transaction_id": "TXN137",
+      "amount": -21.89,
+      "place": "Pizza Hut",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-18",
+      "time": "21:42:20",
+      "transaction_id": "TXN138",
+      "amount": -24.76,
+      "place": "Bowling Alley",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2025-01-19",
+      "time": "13:37:10",
+      "transaction_id": "TXN139",
+      "amount": -11.69,
+      "place": "Subway",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-19",
+      "time": "14:29:35",
+      "transaction_id": "TXN140",
+      "amount": -48.54,
+      "place": "Walmart - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-20",
+      "time": "12:07:20",
+      "transaction_id": "TXN141",
+      "amount": -10.28,
+      "place": "Subway",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-20",
+      "time": "13:47:25",
+      "transaction_id": "TXN142",
+      "amount": 5.14,
+      "place": "Zelle to Tom - Pizza",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2025-01-20",
+      "time": "8:11:41",
+      "transaction_id": "TXN143",
+      "amount": -6.05,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-21",
+      "time": "9:04:39",
+      "transaction_id": "TXN144",
+      "amount": -7.5,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-22",
+      "time": "14:16:27",
+      "transaction_id": "TXN145",
+      "amount": -19.02,
+      "place": "Pizza Hut",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-22",
+      "time": "14:49:01",
+      "transaction_id": "TXN146",
+      "amount": -6.17,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-23",
+      "time": "15:52:31",
+      "transaction_id": "TXN147",
+      "amount": -6.81,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-25",
+      "time": "16:24:12",
+      "transaction_id": "TXN148",
+      "amount": -34.42,
+      "place": "BP Gas Station",
+      "category": "Transport"
+    },
+    {
+      "date": "2025-01-26",
+      "time": "16:51:27",
+      "transaction_id": "TXN149",
+      "amount": -68.04,
+      "place": "Kroger - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-26",
+      "time": "20:31:42",
+      "transaction_id": "TXN150",
+      "amount": -44.3,
+      "place": "Bar & Grill",
+      "category": "Entertainment"
+    },
+    {
+      "date": "2025-01-27",
+      "time": "10:28:49",
+      "transaction_id": "TXN151",
+      "amount": -6.21,
+      "place": "Dunkin Donuts",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-28",
+      "time": "19:01:34",
+      "transaction_id": "TXN152",
+      "amount": -15.47,
+      "place": "Five Guys",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-28",
+      "time": "9:26:19",
+      "transaction_id": "TXN153",
+      "amount": -5.82,
+      "place": "Campus Coffee Shop",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-29",
+      "time": "8:45:34",
+      "transaction_id": "TXN154",
+      "amount": -7.32,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-31",
+      "time": "02:15:33",
+      "transaction_id": "TXN155",
+      "amount": 770.0,
+      "place": "Campus Library - Paycheck (44 hrs)",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2025-01-31",
+      "time": "15:20:12",
+      "transaction_id": "TXN156",
+      "amount": -4.22,
+      "place": "Campus Coffee Shop",
+      "category": "Food"
+    },
+    {
+      "date": "2025-01-31",
+      "time": "16:46:48",
+      "transaction_id": "TXN157",
+      "amount": -20.87,
+      "place": "Pizza Hut",
+      "category": "Food"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "00:05:12",
+      "transaction_id": "TXN158",
+      "amount": 1500.0,
+      "place": "Financial Aid - Monthly Disbursement",
+      "category": "Income & Transfers"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "08:04:42",
+      "transaction_id": "TXN159",
+      "amount": -35,
+      "place": "Xfinity Internet Auto-Pay",
+      "category": "Housing & Bills"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "08:10:59",
+      "transaction_id": "TXN160",
+      "amount": -30,
+      "place": "Water & Sewage Auto-Pay",
+      "category": "Housing & Bills"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "08:11:03",
+      "transaction_id": "TXN161",
+      "amount": -125,
+      "place": "State Farm Car Insurance",
+      "category": "Transport"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "08:13:15",
+      "transaction_id": "TXN162",
+      "amount": -850,
+      "place": "Campus Housing - Rent",
+      "category": "Housing & Bills"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "08:26:06",
+      "transaction_id": "TXN163",
+      "amount": -46.76,
+      "place": "Electric Company Auto-Pay",
+      "category": "Housing & Bills"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "09:26:08",
+      "transaction_id": "TXN164",
+      "amount": -5.99,
+      "place": "Spotify Premium",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "09:30:44",
+      "transaction_id": "TXN165",
+      "amount": -15.99,
+      "place": "Netflix Subscription",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "11:51:57",
+      "transaction_id": "TXN166",
+      "amount": -35.0,
+      "place": "Haircut - Great Clips",
+      "category": "Personal"
+    },
+    {
+      "date": "2025-02-01",
+      "time": "16:52:26",
+      "transaction_id": "TXN167",
+      "amount": -33.01,
+      "place": "BP Gas Station",
+      "category": "Transport"
+    },
+    {
+      "date": "2025-02-02",
+      "time": "12:02:37",
+      "transaction_id": "TXN168",
+      "amount": -62.0,
+      "place": "Walmart - Groceries",
+      "category": "Food"
+    },
+    {
+      "date": "2025-02-03",
+      "time": "16:41:00",
+      "transaction_id": "TXN169",
+      "amount": -20.53,
+      "place": "Target - Personal Care",
+      "category": "Personal"
+    },
+    {
+      "date": "2025-02-03",
+      "time": "7:39:01",
+      "transaction_id": "TXN170",
+      "amount": -6.37,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-02-04",
+      "time": "9:10:18",
+      "transaction_id": "TXN171",
+      "amount": -6.46,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-02-05",
+      "time": "09:19:41",
+      "transaction_id": "TXN172",
+      "amount": -9.99,
+      "place": "Amazon Prime",
+      "category": "Subscriptions"
+    },
+    {
+      "date": "2025-02-05",
+      "time": "14:12:38",
+      "transaction_id": "TXN173",
+      "amount": -6.68,
+      "place": "Starbucks",
+      "category": "Food"
+    },
+    {
+      "date": "2025-02-05",
+      "time": "20:14:16",
+      "transaction_id": "TXN174",
+      "amount": -12.67,
+      "place": "Chick-fil-A",
+      "category": "Food"
+    },
+    {
+      "date": "2025-02-06",
+      "time": "9:20:25",
+      "transaction_id": "TXN175",
+      "amount": -7.05,
+      "place": "Starbucks",
       "category": "Food"
     }
-  ]
+  ],
+  "metadata": {
+    "persona": {
+      "name": "Regular College Student",
+      "housing": "College Dorm",
+      "job": "Campus Library Part-time",
+      "income_range": [
+        350,
+        490
+      ],
+      "spending_style": "Balanced - enjoys life but budget-conscious",
+      "social_life": "Active - dining out 2-3 times/week",
+      "entertainment": "Regular - movies, games, streaming",
+      "coffee_habit": "Daily Starbucks/campus coffee"
+    },
+    "period": {
+      "start": "2024-11-07",
+      "end": "2025-02-07",
+      "days": 92,
+      "months": 3
+    },
+    "statistics": {
+      "total_transactions": 175,
+      "total_income": 9812.92,
+      "total_expenses": 6017.54,
+      "savings": 3795.38,
+      "savings_rate": 38.7
+    },
+    "generation_date": "2026-02-07 16:13:36"
+  }
 }

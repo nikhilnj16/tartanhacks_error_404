@@ -1,0 +1,18 @@
+import { Routes, Route } from "react-router-dom";
+import Signup from "./pages/signup";
+import Login from "./pages/login";
+import BankConnection from "./pages/BankConnection";
+import Dashboard from "./pages/Dashboard";
+import InfoPage from "./pages/InfoPage";
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<InfoPage />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/bank-connection" element={<BankConnection />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  );
+}
