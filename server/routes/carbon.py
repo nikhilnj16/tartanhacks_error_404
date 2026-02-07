@@ -37,16 +37,31 @@ def get_emission_factors():
     }
 
 
+def _date_key(t: dict) -> str:
+    """Sort key for transaction date (date or transaction_date, first 10 chars)."""
+    td = t.get("date") or t.get("transaction_date") or ""
+    return (td[:10] if isinstance(td, str) else str(td)[:10]) if td else ""
+
+
+def _take_last_n_by_date(transactions: list, n: int) -> list:
+    """Return the last N transactions when sorted by date (ascending)."""
+    if n <= 0 or not transactions:
+        return transactions
+    sorted_tx = sorted(transactions, key=_date_key)
+    return sorted_tx[-n:] if len(sorted_tx) > n else sorted_tx
+
+
 @router.get("/footprint")
 def get_carbon_footprint(
     user_email: str = Query(..., description="User email (e.g. current user) to compute footprint for"),
     db: FirestoreClient = Depends(get_db),
-    limit: int | None = Query(None, description="Use only first N transactions (default: all)"),
+    last_n: int | None = Query(None, description="Use only the last N transactions by date (default: all)"),
     include_transactions: bool = Query(False, description="Include per-transaction impact classification"),
 ):
     """
     Compute carbon footprint (kg CO2e) from the given user's transactions (Firestore).
     Pass user email in query; no auth header required. Only spending (negative amounts) is counted.
+    Optionally use only the last N transactions by date.
 
     **Impact classification** (vs baseline = average $ per transaction in that category):
     - **Low**: transaction amount < 70% of category average
@@ -54,8 +69,8 @@ def get_carbon_footprint(
     - **High**: transaction amount > 130% of category average
     """
     transactions = get_transactions_for_user(db, user_email)
-    if limit is not None:
-        transactions = transactions[:limit]
+    if last_n is not None and last_n > 0:
+        transactions = _take_last_n_by_date(transactions, last_n)
     spending = [t for t in transactions if (t.get("amount") or 0) < 0]
 
     # 1) Baseline per category: average $ per transaction in that category

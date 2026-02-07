@@ -3,8 +3,11 @@ import axios from "axios";
 import Sidebar from "./Sidebar";
 import BudgetManagerTab from "./BudgetManagerTab";
 import SubscriptionManagerTab from "./SubscriptionManagerTab";
+import CarbonEmissionsTab from "./CarbonEmissionsTab";
 import UserSettingsTab from "./UserSettingsTab";
+import MoneyRain from "../components/MoneyRain";
 import { getBudget, getBudgetPlan, getStoredUserEmail } from "../api/budget";
+import logo from "../assets/logo.png";
 
 import {
     PieChart,
@@ -23,6 +26,7 @@ type Tab =
     | "predictive"
     | "budget"
     | "subscriptions"
+    | "carbon"
     | "settings";
 
 /* -------------------- Data -------------------- */
@@ -149,8 +153,20 @@ export default function Dashboard() {
             });
     }, []);
 
+    // ---------------------------------------------------------
+    // EFFECT 3: Fetch Savings for Money Rain
+    // ---------------------------------------------------------
+    const [savings, setSavings] = useState<number>(0);
+    useEffect(() => {
+        const email = getStoredUserEmail();
+        if (email) {
+            getBudget(email).then(b => setSavings(b.savings)).catch(() => { });
+        }
+    }, []);
+
     return (
         <div className="h-screen w-full flex overflow-hidden bg-[#D1E8E2]">
+            <MoneyRain savings={savings} />
             {/* Sidebar */}
             <Sidebar
                 isOpen={sidebarOpen}
@@ -173,9 +189,13 @@ export default function Dashboard() {
                         >
                             ☰
                         </button>
-                        <h1 className="absolute left-1/2 -translate-x-1/2 font-bold text-lg text-[#19747E]">
-                            BudgetBruh
-                        </h1>
+
+                        {/* Center: Title */}
+                        <img
+                            src={logo}
+                            alt="BudgetBruh"
+                            className="absolute left-1/2 -translate-x-1/2 h-8 md:hidden"
+                        />
                     </div>
                 </header>
 
@@ -191,6 +211,7 @@ export default function Dashboard() {
                     {activeTab === "predictive" && <PredictiveTab />}
                     {activeTab === "budget" && <BudgetManagerTab />}
                     {activeTab === "subscriptions" && <SubscriptionManagerTab />}
+                    {activeTab === "carbon" && <CarbonEmissionsTab />}
                     {activeTab === "settings" && <UserSettingsTab />}
                 </main>
             </div>
