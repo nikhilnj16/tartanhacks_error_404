@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from models.valid_transaction import validate_transaction
 from routes.LLMcall import get_prediction
 from transaction_repo import add_transaction_for_user
+from routes.reflection import reflect_purchase
 
 load_dotenv()
 
@@ -23,6 +24,10 @@ class DummyTransactionPayload(BaseModel):
     time: str
     transaction_id: str
 
+class PurchaseInput(BaseModel):
+    amount: float
+    merchant: str 
+
 
 @router.post("/transactions/dummy")
 def add_dummy_transaction(
@@ -35,12 +40,20 @@ def add_dummy_transaction(
     Request body: amount, category, date, place, time, transaction_id.
     """
     transaction = body.model_dump()
+
+
+
+    reflect = PurchaseInput(amount=transaction["amount"], merchant=transaction["place"])
+
+    output = reflect_purchase(reflect)
     count = add_transaction_for_user(db, user_email, transaction)
     return {
         "message": "Transaction added",
         "user_email": user_email.strip().lower(),
         "transaction": transaction,
         "total_transactions": count,
+        "output" : output,
+
     }
 
 

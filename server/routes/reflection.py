@@ -18,7 +18,7 @@ class PurchaseInput(BaseModel):
 @router.post("/reflection/purchase")
 def reflect_purchase(data: PurchaseInput):
     if data.amount <= 0:
-        return {"error": "Purchase amount must be positive"}
+        data.amount = -1 * data.amount
 
     goal_status = compute_goal_status()
     daily_savings_required = goal_status["daily_savings_required"]
