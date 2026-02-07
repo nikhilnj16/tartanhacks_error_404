@@ -62,5 +62,3 @@ def reflect_transaction(user_email: str):
             break
     return get_prediction(bad_transactions, user_budget)
     
-
-    
