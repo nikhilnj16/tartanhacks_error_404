@@ -1,12 +1,12 @@
-from fastapi import APIRouter
-import os
-from pathlib import Path
-import json
+from fastapi import APIRouter, Body, Depends, Query
 from firebase_admin import firestore
-from database import init_db
+from pydantic import BaseModel
+
+from database import init_db, get_db
 from dotenv import load_dotenv
 from models.valid_transaction import validate_transaction
 from routes.LLMcall import get_prediction
+from transaction_repo import add_transaction_for_user
 
 load_dotenv()
 
@@ -14,6 +14,34 @@ init_db()
 
 router = APIRouter()
 
+
+class DummyTransactionPayload(BaseModel):
+    amount: int | float
+    category: str
+    date: str
+    place: str
+    time: str
+    transaction_id: str
+
+
+@router.post("/transactions/dummy")
+def add_dummy_transaction(
+    user_email: str = Query(..., description="User email (document ID for transactions)"),
+    body: DummyTransactionPayload = Body(..., description="Transaction record to add"),
+    db: firestore.Client = Depends(get_db),
+):
+    """
+    Add a single transaction to the given user's transactions in Firestore.
+    Request body: amount, category, date, place, time, transaction_id.
+    """
+    transaction = body.model_dump()
+    count = add_transaction_for_user(db, user_email, transaction)
+    return {
+        "message": "Transaction added",
+        "user_email": user_email.strip().lower(),
+        "transaction": transaction,
+        "total_transactions": count,
+    }
 
 
 @router.get("/transactions")
