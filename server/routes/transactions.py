@@ -2,13 +2,28 @@ from fastapi import APIRouter
 import os
 from pathlib import Path
 import json
+from firebase_admin import firestore
+from database import init_db
+from dotenv import load_dotenv
+
+load_dotenv()
+
+init_db()
 
 router = APIRouter()
 
-file_path = Path(__file__).parent.parent / "data" / "user_persona_1_transactions.json"
+def return_email():
+    db = firestore.client()
+    print(db)
+    users = db.collection("users").get()
+    email = ""
+    for user in users:
+        email = user.to_dict()['email']
+        break
+    return email
 
 @router.get("/transactions")
 def get_transactions():
-    with open(file_path, "r") as f:
-        transactions = json.load(f)
-    return transactions["transactions"][:5]
+    db = firestore.client()
+    transactions = db.collection("transactions").document(return_email()).get()
+    return transactions.to_dict()["transactions"][:5]
