@@ -89,6 +89,6 @@ export async function updateBudgetPlan(
   });
   const data = (await res.json()) as { message?: string; ok?: boolean };
   if (!res.ok) throw new Error(data?.message ?? "Failed to update budget");
-  return data;
+  return data as { message: string; ok: boolean };
 }
 

@@ -6,10 +6,10 @@ from scipy.sparse import hstack
 
 
 try:
-    model = joblib.load('regression_model/dynamic_expenditure_model.pkl')
-    scaler = joblib.load('regression_model/dynamic_scaler.pkl')
-    tfidf = joblib.load('regression_model/dynamic_tfidf.pkl')
-    feature_columns = joblib.load('regression_model/dynamic_feature_columns.pkl')
+    model = joblib.load('models/regression_model/dynamic_expenditure_model.pkl')
+    scaler = joblib.load('models/regression_model/dynamic_scaler.pkl')
+    tfidf = joblib.load('models/regression_model/dynamic_tfidf.pkl')
+    feature_columns = joblib.load('models/regression_model/dynamic_feature_columns.pkl')
     
 
     
@@ -101,7 +101,8 @@ def validate_transaction(transaction):
         pred_label = "Important" if prediction == 1 else "Discretionary"
         confidence = max(probability)
         return pred_label, confidence
-
+    else:
+        return "Income & Transfers", 1.0
 
 
 
