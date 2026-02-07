@@ -62,14 +62,3 @@ def reflect_transaction(user_email: str):
             break
     return get_prediction(bad_transactions, user_budget)
     
-
-from datetime import datetime
-from pydantic import BaseModel
-
-class TransactionInput(BaseModel):
-    user_email: str
-    amount: float
-    place: str
-    category: str
-    transaction_id: str
-
